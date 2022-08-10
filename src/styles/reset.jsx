@@ -34,6 +34,9 @@ const StyledReset = createGlobalStyle`
     width: 100vw;
     overflow-x: hidden;
   }
+  a {
+    text-decoration: none;
+  }
 `;
 
 export default StyledReset;

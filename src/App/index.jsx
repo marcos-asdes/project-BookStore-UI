@@ -3,7 +3,7 @@ import { ThemeProvider } from 'styled-components';
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { theme, StyledReset } from '../styles/index';
 
-import { Home } from './components/Home';
+import Home from '../components/Home';
 
 export default function App() {
   return (
