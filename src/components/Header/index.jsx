@@ -73,6 +73,7 @@ const SearchBar = styled.div`
   border-radius: 15px;
   border: 1px solid #d7d7d7;
   background-color: #ffffff;
+  
   height: 65%;
   width: 30%;
   textarea:focus,
@@ -86,11 +87,13 @@ const SearchBar = styled.div`
     height: 100%;
     width: 95%;
     padding-left: 5%;
-    font-family: "Roboto", sans-serif;
+    font-family: "Inter", sans-serif;
+    letter-spacing: .1px;
     font-weight: 500;
     font-size: 16px;
     border: 0 none;
     border-radius: 15px;
+    /* color: #57aae1; */
 /*  background-image: url(./search-outline.png);
     background-repeat: no-repeat;
     background-position: left top;
@@ -109,7 +112,8 @@ const PlaceAnAd = styled.button`
   color: white;
   outline: 0;
   border-radius: 20px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
+  letter-spacing: .1px;
   font-size: .8em;
   font-weight: 500;
 `;
@@ -120,9 +124,11 @@ const Login = styled.button`
   box-shadow: 0 0 0 0;
   border: 1px solid #209CEE;
   color: #209CEE;
+  background-color: white;
   outline: 0;
   border-radius: 20px;
-  font-family: "Roboto", sans-serif;
+  font-family: "Inter", sans-serif;
+  letter-spacing: .1px;
   font-size: .8em;
   font-weight: 500;
 `;
