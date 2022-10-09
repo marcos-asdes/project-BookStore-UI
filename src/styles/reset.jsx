@@ -15,7 +15,7 @@ const StyledReset = createGlobalStyle`
     -ms-overflow-style: none; /* for IE, Edge */
     cursor: default;
     user-select: none;
-    transition: all 200ms ease-in-out 0s;
+    transition: all 400ms ease-in-out 0s;
   }
   ::-webkit-scrollbar {
     display: none;
