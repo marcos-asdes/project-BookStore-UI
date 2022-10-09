@@ -6,7 +6,7 @@ export default function PlaceAnAd() {
 
   return (
     <PlaceAnAdContainer>
-      PlaceAnAd
+      Place an ad
     </PlaceAnAdContainer>
   )
 }

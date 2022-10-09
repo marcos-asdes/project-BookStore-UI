@@ -1,42 +1,45 @@
 import React from 'react'
-
-import google_logo from '../../../assets/google_logo.png'
-import facebook_logo from '../../../assets/facebook_logo.png'
-import github_logo from '../../../assets/github_logo.png'
+import { useForm } from 'react-hook-form'
 
 import styled from 'styled-components'
 
+import OAuth from '../OAuth'
+
+import { schema } from './Form/schema'
+
+import { useYupValidationResolver } from '../../../hooks/validation_schema'
+
 export default function SignIn() {
+  const resolver = useYupValidationResolver(schema);
+  const { register, handleSubmit } = useForm({ resolver })
+
+  // trocar o console.log por uma requisição
+  const onSubmit = async data => { console.log(data) }
+
   return (
     <SignInWrapper>
       <LoginContainer>
         <div className='aux-div-exit-modal'>
           <div className='exit-modal-left-spacer'/>
-          <div className='exit-modal'>x</div>
+          <div className='exit-modal' onClick={()=>console.log('colocar função aqui')}>x</div>
         </div>
         <div className='signin-modal-title'>Log in to BookStore</div>
-        <OAuth>
-          <div className='oauth-button'>
-            <img src={google_logo} alt='google_logo'/>
-          </div>
-          <div className='oauth-button'>
-            <img src={facebook_logo} alt='facebook-logo'/>
-          </div>
-          <div className='oauth-button'>
-            <img src={github_logo} alt='github_logo'/>
-          </div>
-        </OAuth>
+        <OAuth/>
         <div className='aux-div-signin-modal-spacer'>
           <div className='signin-modal-spacer'/>
           <p>or</p>
           <div className='signin-modal-spacer'/>
         </div>
-        <div>
-          <input></input>
-          <input></input>
-        </div>
+        <Form>
+          <input placeholder='Email' type='email' {...register('email', { required: true, maxLength: 50 })}/>
+{/*           {errors.name && errors.name.type === "required" && <span>This is required</span>}
+          {errors.name && errors.name.type === "maxLength" && <span>Max length exceeded</span>} */}
+          <input placeholder='Password' type='password' {...register('password', { required: true, maxLength: 20 })}/>
+{/*           {errors.name && errors.name.type === "required" && <span>This is required</span>}
+          {errors.name && errors.name.type === "maxLength" && <span>Max length exceeded</span>} */}
+        </Form>
         <div>Forgot password?</div>
-        <button>Log in</button>
+        <button onClick={handleSubmit(onSubmit)}>Log in</button>
         <div>
           <p>No account?</p>
           <p>Create one</p>
@@ -45,6 +48,35 @@ export default function SignIn() {
     </SignInWrapper>
   )
 }
+
+const Form = styled.form`
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  input {
+    width: 85%;
+    height: 35px;
+    box-shadow: 0 0 0 0;
+    border: 1px solid #7B807E;
+    border-radius: 15px;
+    outline: none;
+    padding: 0 0 0 10px;
+    margin: 5px 0 10px 0;
+    color: #000000;
+
+    ::placeholder {
+      color: #7B807E;
+
+    }
+
+/*     input::-ms-reveal {
+      position: absolute;
+      display: inside;
+    } */
+  }
+`
 
 const SignInWrapper = styled.div`
   width: 100vw;
@@ -60,9 +92,9 @@ const SignInWrapper = styled.div`
 `
 
 const LoginContainer = styled.div`
-  width: 400px;
+  width: 350px;
   height: 400px;
-  background-color: white;
+  background-color: #FFFFFF;
   border: 1px solid #FFFFFF;
   border-radius: 20px;
   font-family: "Inter", sans-serif;
@@ -87,7 +119,7 @@ const LoginContainer = styled.div`
       height: 15px;
       margin: 15px 15px 0 0;
       font-size: 15px;
-      color: #8A8A8A;
+      color: #7B807E;
       cursor: pointer;
     }
   }
@@ -102,6 +134,7 @@ const LoginContainer = styled.div`
     font-weight: 500;
     letter-spacing: 0.1px;
     margin: 0 0 15px 0;
+    color: #000000;
   }
 
   .aux-div-signin-modal-spacer {
@@ -113,41 +146,13 @@ const LoginContainer = styled.div`
 
     p {
       font-size: 1.25em;
-      color: #2d2d2d;
+      color: #7B807E;
     }
 
     .signin-modal-spacer {
-      width: 40%;
+      width: 35%;
       height: 1px;
-      background-color: #EFEFEF;
-    }
-  }
-`
-
-const OAuth = styled.div`
-  width: 100%;
-  height: 40px;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  .oauth-button {
-    width: 40px;
-    height: 40px;
-    background-color: #efefef;
-    border-radius: 20px;
-    margin: 0 10px 0 10px;
-    border: none;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
-    img {
-      width: 65%;
-      height: 65%;
-      border-radius: 20px;
-      border: none;
-      cursor: pointer;
+      background-color: #D7D7D7;
     }
   }
 `

@@ -19,7 +19,7 @@ const HeaderContainer = styled.section`
     .aux-buttons-div {
       display: flex;
       width: 25%;
-      height: 50%;
+      height: 65%;
       /* background-color: red; */
       align-items: center;
       justify-content: space-around;
