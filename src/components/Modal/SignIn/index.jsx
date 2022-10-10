@@ -1,34 +1,27 @@
 import React, { useState } from 'react'
-/* import { useForm } from 'react-hook-form'
- */
+//import { useForm } from 'react-hook-form'
 import styled from 'styled-components'
 
 import OAuth from '../OAuth'
 
 /* import { schema } from './Form/schema'
- */
-/* import { useYupValidationResolver } from '../../../hooks/validation_schema' */
-/* import { yupResolver } from "@hookform/resolvers/yup"
- */
-export default function SignIn() {
-  /* const resolver = useYupValidationResolver(schema); */
-/*   const [inputMap, setInputMap] = useState(new Map());
- */  /* const { register, handleSubmit } = useForm({ resolver: yupResolver(schema) }) */
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  // trocar o console.log por uma requisição
-/*   const onSubmit = async data => { console.log(data) }
- */
-  //console.log(errors.password)
+import { useYupValidationResolver } from '../../../hooks/validation_schema' */
+//import { yupResolver } from "@hookform/resolvers/yup"
 
-  /* function selectInputOnClick(type) {
-    const selected = inputMap.has(type)
-    if (selected) {
-      inputMap.delete(type)
-      setInputMap(new Map(inputMap))
-    } else {
-      setInputMap(new Map(inputMap.set(type)))
-    }
+export default function SignIn() {
+  
+  const [form, setForm] = useState({})
+  
+  // trocar o console.log por uma requisição
+  /*   const onSubmit = async data => { console.log(data) } handleSubmit
+  */
+  function handleChange(e) {
+    setForm({...form, [e.target.name]: e.target.value})
+  }
+
+ /*  async function handleSubmit(form) {
+    console.log(form)
+    const yupForm = 
   } */
 
   return (
@@ -36,7 +29,10 @@ export default function SignIn() {
       <LoginContainer>
         <div className='aux-div-exit-modal'>
           <div className='exit-modal-left-spacer'/>
-          <div className='exit-modal' onClick={()=>console.log('colocar função de saída aqui')}>x</div>
+          <div className='exit-modal' 
+          onClick={()=>console.log('colocar função de saída aqui')}>
+            x
+          </div>
         </div>
         <div className='signin-modal-title'>Log in to BookStore</div>
         <OAuth/>
@@ -47,23 +43,26 @@ export default function SignIn() {
         </div>
         <Form>
           <div className='wrapper-input'>
-            <input type='email' className={email !== "" ? 'has-value input' : 'input'} value={email} onChange={e => setEmail(e.target.value)}/*  {...register('email')} *//>
-            <span className='focus-input' data-placeholder='Email'></span>
+            <input type='email' name='email'
+            className={form.email ? 'has-value input' : 'input'}
+            onChange={handleChange} />
+            <span className='focus-input' 
+            data-placeholder='Email'/>
           </div>
           <div className='wrapper-input'>
-            <input type='password' className={password !== "" ? 'has-value input' : 'input'} value={password} onChange={e => setPassword(e.target.value)}/*  {...register('password')} *//>
-            <span className='focus-input' data-placeholder='Password'></span>
+            <input type='password' name='password'
+            className={form.password ? 'has-value input' : 'input'}
+            onChange={handleChange} />
+            <span className='focus-input' 
+            data-placeholder='Password'/>
           </div>
-          {/* {errors.email && <span>This is a email</span>} */}
-          {/*{errors.name && errors.name.type === "maxLength" && <span>Max length exceeded</span>} */}
-          
-          {/* {errors.password && <span>This is a password</span>} */}
-{/*           {errors.name && errors.name.type === "required" && <span>This is required</span>}
-          {errors.name && errors.name.type === "maxLength" && <span>Max length exceeded</span>} */}
         </Form>
         <div>Forgot password?</div>
         <div className='wrapper-login-btn'>
-          <button className='login-btn'/*  onClick={handleSubmit(onSubmit)} */>Log in</button>
+          <button className='login-btn' 
+          onClick={() => handleSubmit(form)}>
+            Log in
+          </button>
         </div>
         <div>
           <p>No account?</p>
@@ -175,24 +174,6 @@ const Form = styled.form`
       width: 100%;
     }
   }
-
-/*   input {
-    width: 85%;
-    height: 35px;
-    box-shadow: 0 0 0 0;
-    border: 1px solid;
-    border-radius: 15px;
-    outline: none;
-    padding: 0 0 0 10px;
-    margin: 5px 0 10px 0;
-    border-color: ${(props) => props.changeinputbordercolor};
-    color: #000000;
-    
-
-    ::placeholder {
-      color: #7B807E;
-
-    } */
 
 /*     input::-ms-reveal {
       position: absolute;
