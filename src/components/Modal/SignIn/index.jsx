@@ -1,39 +1,31 @@
-import React, { useState } from 'react'
-//import { useForm } from 'react-hook-form'
+import React, { /* useEffect */ useState } from 'react'
+import { useForm } from 'react-hook-form'
+import { yupResolver } from "@hookform/resolvers/yup"
 import styled from 'styled-components'
 
 import OAuth from '../OAuth'
+import ExitModal from '../ExitModal'
 
-/* import { schema } from './Form/schema'
-import { useYupValidationResolver } from '../../../hooks/validation_schema' */
-//import { yupResolver } from "@hookform/resolvers/yup"
+import { schema } from './Form/schema'
+
 
 export default function SignIn() {
-  
+  const { register, handleSubmit, formState: { errors } } = useForm({
+    resolver: yupResolver(schema),
+  });
   const [form, setForm] = useState({})
   
-  // trocar o console.log por uma requisição
-  /*   const onSubmit = async data => { console.log(data) } handleSubmit
-  */
   function handleChange(e) {
     setForm({...form, [e.target.name]: e.target.value})
   }
-
- /*  async function handleSubmit(form) {
-    console.log(form)
-    const yupForm = 
-  } */
+  
+  // trocar o console.log por uma requisição
+  const onSubmit = async data => { console.log(data) }
 
   return (
     <SignInWrapper>
       <LoginContainer>
-        <div className='aux-div-exit-modal'>
-          <div className='exit-modal-left-spacer'/>
-          <div className='exit-modal' 
-          onClick={()=>console.log('colocar função de saída aqui')}>
-            x
-          </div>
-        </div>
+        <ExitModal/>
         <div className='signin-modal-title'>Log in to BookStore</div>
         <OAuth/>
         <div className='aux-div-signin-modal-spacer'>
@@ -45,22 +37,22 @@ export default function SignIn() {
           <div className='wrapper-input'>
             <input type='email' name='email'
             className={form.email ? 'has-value input' : 'input'}
-            onChange={handleChange} />
-            <span className='focus-input' 
+            {...register('email', { onChange: handleChange })} />
+            <span className={!errors.email ? 'focus-input' : 'focus-input-error'}
             data-placeholder='Email'/>
           </div>
           <div className='wrapper-input'>
             <input type='password' name='password'
             className={form.password ? 'has-value input' : 'input'}
-            onChange={handleChange} />
-            <span className='focus-input' 
+            {...register('password', { onChange: handleChange })} />
+            <span className={!errors.password ? 'focus-input' : 'focus-input-error'}
             data-placeholder='Password'/>
           </div>
         </Form>
         <div>Forgot password?</div>
         <div className='wrapper-login-btn'>
           <button className='login-btn' 
-          onClick={() => handleSubmit(form)}>
+          onClick={handleSubmit(onSubmit)}>
             Log in
           </button>
         </div>
@@ -122,21 +114,52 @@ const Form = styled.form`
       position: absolute;
       bottom: -2px;
       left: 0;
-      width: 0;
+      width: 100%;
       height: 2px;
+      background: #209CEE;
+    }
+
+    .focus-input::after {
+      font-size: 15px;
+      color: #999999;
+      line-height: 1.2;
+      content: attr(data-placeholder);
+      display: block;
+      width: 100%;
+      position: absolute;
+      top: 16px;
+      left: 0;
+      padding-left: 5px;
 
       transition: all 400ms ease-in-out 0s;
       -webkit-transition: all 0.4s;
       -o-transition: all 0.4s;
       -moz-transition: all 0.4s;
-      
-      background: -webkit-linear-gradient(to left, #209CEE, #209CEE);
-      background: -o-linear-gradient(to left, #209CEE, #209CEE);
-      background: -moz-linear-gradient(to left, #209CEE, #209CEE);
-      background: linear-gradient(to left, #209CEE, #209CEE);
     }
 
-    .focus-input::after {
+    .focus-input-error {
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      top:0;
+      left:0;
+      pointer-events: none;
+      color: #000;
+    }
+
+    .focus-input-error::before {
+      content: "";
+      display: block;
+      position: absolute;
+      bottom: -2px;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: #FF0000;
+    }
+
+    .focus-input-error::after {
       font-size: 15px;
       color: #999999;
       line-height: 1.2;
@@ -158,7 +181,11 @@ const Form = styled.form`
       outline: 0;
     }
 
-    .input:focus + .focus-input::after {
+    .input:focus + .focus-input::after  {
+      top: -15px;
+    }
+
+    .input:focus + .focus-input-error::after {
       top: -15px;
     }
 
@@ -166,16 +193,28 @@ const Form = styled.form`
       width: 100%;
     }
 
+    .input:focus + .focus-input-error::before {
+      width: 100%;
+    }
+
     .has-value + .focus-input::after {
+      top: -15px;
+    }
+
+    .has-value + .focus-input-error::after {
       top: -15px;
     }
 
     .has-value + .focus-input::before {
       width: 100%;
     }
-  }
 
-/*     input::-ms-reveal {
+    .has-value + .focus-input-error::before {
+      width: 100%;
+    }
+  }
+/* 
+    input::-ms-reveal {
       position: absolute;
       display: inside;
     } */
@@ -204,29 +243,6 @@ const LoginContainer = styled.div`
   font-size: .8em;
   outline: 0;
   overflow: hidden;
-
-  .aux-div-exit-modal {
-    width: 100%;
-    height: 30px;
-    display: flex;
-
-    .exit-modal-left-spacer {
-      width: calc(100% - 30px);
-      height: 100%;
-    }
-
-    .exit-modal {
-      display: flex;
-      justify-content: flex-end;
-      align-items: center;
-      width: 15px;
-      height: 15px;
-      margin: 15px 15px 0 0;
-      font-size: 15px;
-      color: #7B807E;
-      cursor: pointer;
-    }
-  }
  
   .signin-modal-title {
     width: 100%;
@@ -290,16 +306,3 @@ const LoginContainer = styled.div`
     }
   }
 `
-
-/*   width: 30%;
-  height: 100%;
-  box-shadow: 0 0 0 0;
-  border: 1px solid #209CEE;
-  color: #209CEE;
-  background-color: white;
-  outline: 0;
-  border-radius: 20px;
-  font-family: "Inter", sans-serif;
-  letter-spacing: .1px;
-  font-size: .8em;
-  font-weight: 500; */
