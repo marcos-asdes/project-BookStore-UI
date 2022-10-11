@@ -9,9 +9,12 @@ const ExitModalContainer = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: #7B807E;
-  font-size: 15px;
-  cursor: pointer;
+
+  img {
+    width: 100%;
+    height: 100%;
+    cursor: pointer;
+  }
 `
 
 export {

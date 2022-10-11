@@ -6,6 +6,7 @@ const OAuthContainer = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  margin: 0 0 10px 0;
 
   .oauth-button {
     width: 40px;
