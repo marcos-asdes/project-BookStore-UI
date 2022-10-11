@@ -5,13 +5,10 @@ import { ExitModalContainer } from './style'
 export default function ExitModal() {
   return (
     <ExitModalContainer>
-      <div className='exit-modal-left-spacer' />
-      <div className='exit-modal' onClick={() => console.log('colocar função de saída aqui')}>
-        x
-      </div>
+      x
     </ExitModalContainer>
   )
 }
 
 // inserir função de fechamento de modal
-// corrigir div do modal
+// colocar imagem no lugar do x

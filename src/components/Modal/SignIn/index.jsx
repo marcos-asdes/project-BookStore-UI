@@ -1,4 +1,5 @@
-import React, { /* useEffect */ useState } from 'react'
+import React, {useState} from 'react'
+import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from "@hookform/resolvers/yup"
 import styled from 'styled-components'
@@ -7,7 +8,6 @@ import OAuth from '../OAuth'
 import ExitModal from '../ExitModal'
 
 import { schema } from './Form/schema'
-
 
 export default function SignIn() {
   const { register, handleSubmit, formState: { errors } } = useForm({
@@ -26,14 +26,14 @@ export default function SignIn() {
     <SignInWrapper>
       <LoginContainer>
         <ExitModal/>
-        <div className='signin-modal-title'>Log in to BookStore</div>
+        <Title>Log in to BookStore</Title>
         <OAuth/>
         <div className='aux-div-signin-modal-spacer'>
           <div className='signin-modal-spacer'/>
           <p>or</p>
           <div className='signin-modal-spacer'/>
         </div>
-        <Form>
+        <Form>      
           <div className='wrapper-input'>
             <input type='email' name='email'
             className={form.email ? 'has-value input' : 'input'}
@@ -48,14 +48,14 @@ export default function SignIn() {
             <span className={!errors.password ? 'focus-input' : 'focus-input-error'}
             data-placeholder='Password'/>
           </div>
+          <Link to='/'>Forgot password?</Link>
+          <div className='wrapper-login-btn'>
+            <button className='login-btn' 
+            onClick={handleSubmit(onSubmit)}>
+              Log in
+            </button>
+          </div>
         </Form>
-        <div>Forgot password?</div>
-        <div className='wrapper-login-btn'>
-          <button className='login-btn' 
-          onClick={handleSubmit(onSubmit)}>
-            Log in
-          </button>
-        </div>
         <div>
           <p>No account?</p>
           <p>Create one</p>
@@ -75,14 +75,10 @@ const Form = styled.form`
     width: 85%;
     position: relative;
     border-bottom: 2px solid #ADADAD;
-    margin-bottom: 37px;
+    margin-bottom: 30px;
 
     :first-child {
       margin-top: 15px;
-    }
-
-    :last-child {
-      margin-bottom: 30px;
     }
 
     .input {
@@ -92,12 +88,14 @@ const Form = styled.form`
       border: none;
       display: block;
       width: 100%;
-      height: 45px;
+      height: 40px;
       background-color: transparent;
       padding: 0 5px;
+      
     }
 
-    .focus-input {
+    .focus-input,
+    .focus-input-error {
       position: absolute;
       display: block;
       width: 100%;
@@ -119,35 +117,6 @@ const Form = styled.form`
       background: #209CEE;
     }
 
-    .focus-input::after {
-      font-size: 15px;
-      color: #999999;
-      line-height: 1.2;
-      content: attr(data-placeholder);
-      display: block;
-      width: 100%;
-      position: absolute;
-      top: 16px;
-      left: 0;
-      padding-left: 5px;
-
-      transition: all 400ms ease-in-out 0s;
-      -webkit-transition: all 0.4s;
-      -o-transition: all 0.4s;
-      -moz-transition: all 0.4s;
-    }
-
-    .focus-input-error {
-      position: absolute;
-      display: block;
-      width: 100%;
-      height: 100%;
-      top:0;
-      left:0;
-      pointer-events: none;
-      color: #000;
-    }
-
     .focus-input-error::before {
       content: "";
       display: block;
@@ -159,6 +128,7 @@ const Form = styled.form`
       background: #FF0000;
     }
 
+    .focus-input::after,
     .focus-input-error::after {
       font-size: 15px;
       color: #999999;
@@ -170,7 +140,6 @@ const Form = styled.form`
       top: 16px;
       left: 0;
       padding-left: 5px;
-
       transition: all 400ms ease-in-out 0s;
       -webkit-transition: all 0.4s;
       -o-transition: all 0.4s;
@@ -181,43 +150,26 @@ const Form = styled.form`
       outline: 0;
     }
 
-    .input:focus + .focus-input::after  {
-      top: -15px;
-    }
-
+    .input:focus + .focus-input::after,
     .input:focus + .focus-input-error::after {
-      top: -15px;
+      top: -17px;
     }
 
-    .input:focus + .focus-input::before {
-      width: 100%;
-    }
-
+    .input:focus + .focus-input::before,
     .input:focus + .focus-input-error::before {
       width: 100%;
     }
 
-    .has-value + .focus-input::after {
-      top: -15px;
-    }
-
+    .has-value + .focus-input::after,
     .has-value + .focus-input-error::after {
-      top: -15px;
+      top: -17px;
     }
 
-    .has-value + .focus-input::before {
-      width: 100%;
-    }
-
+    .has-value + .focus-input::before,
     .has-value + .focus-input-error::before {
       width: 100%;
     }
   }
-/* 
-    input::-ms-reveal {
-      position: absolute;
-      display: inside;
-    } */
 `
 
 const SignInWrapper = styled.div`
@@ -232,7 +184,18 @@ const SignInWrapper = styled.div`
   justify-content: center;
   align-items: center;
 `
-
+const Title = styled.div`
+  width: 100%;
+  height: 30px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 20px;
+  font-weight: 500;
+  letter-spacing: 0.1px;
+  margin: 0 0 15px 0;
+  color: #000000;
+`
 const LoginContainer = styled.div`
   width: 350px;
   height: 600px;
@@ -243,20 +206,8 @@ const LoginContainer = styled.div`
   font-size: .8em;
   outline: 0;
   overflow: hidden;
+  position: relative;
  
-  .signin-modal-title {
-    width: 100%;
-    height: 30px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 20px;
-    font-weight: 500;
-    letter-spacing: 0.1px;
-    margin: 0 0 15px 0;
-    color: #000000;
-  }
-
   .aux-div-signin-modal-spacer {
     width: 100%;
     height: 50px;

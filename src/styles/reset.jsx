@@ -36,6 +36,7 @@ const StyledReset = createGlobalStyle`
   }
   a {
     text-decoration: none;
+    color: #000;
   }
 `;
 
