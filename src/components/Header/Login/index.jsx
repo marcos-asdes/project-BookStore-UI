@@ -1,18 +1,20 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 import SignIn from '../../Modal/SignIn';
 
 import { LoginButton } from './style.jsx';
 
 export default function Login() {
+  const [modalSignInIsVisible, setModalSignInIsVisible] = useState(false)
+
   return (
     <>
-      <LoginButton>
+      <LoginButton onClick={() => setModalSignInIsVisible(true)}>
         Log in
       </LoginButton>
-      <SignIn />
+      { modalSignInIsVisible && (
+        <SignIn modalSignInIsVisible={modalSignInIsVisible} setModalSignInIsVisible={setModalSignInIsVisible}/>
+      )}
     </>
   )
 }
-
-// ajustar posição do SignIn para dentro do botão
