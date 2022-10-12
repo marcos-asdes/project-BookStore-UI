@@ -1,7 +1,10 @@
 import styled from 'styled-components'
 
 const LoginButton = styled.button`
-  width: 30%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35%;
   height: 100%;
   box-shadow: 0 0 0 0;
   border: 1px solid #209CEE;
@@ -11,8 +14,11 @@ const LoginButton = styled.button`
   border-radius: 20px;
   font-family: "Inter", sans-serif;
   letter-spacing: .1px;
-  font-size: .8em;
-  font-weight: 500;
+  font-size: 80%;
+  font-weight: 700;
+  line-height: 1em;
+  cursor: pointer;
+  flex-wrap: wrap;
 `;
 
 export {

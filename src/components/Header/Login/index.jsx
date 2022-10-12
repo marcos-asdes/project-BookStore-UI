@@ -13,7 +13,8 @@ export default function Login() {
         Log in
       </LoginButton>
       { modalSignInIsVisible && (
-        <SignIn modalSignInIsVisible={modalSignInIsVisible} setModalSignInIsVisible={setModalSignInIsVisible}/>
+        <SignIn modalSignInIsVisible={modalSignInIsVisible} 
+        setModalSignInIsVisible={setModalSignInIsVisible}/>
       )}
     </>
   )

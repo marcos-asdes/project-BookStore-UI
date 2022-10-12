@@ -18,7 +18,7 @@ const HeaderContainer = styled.section`
     /* background-color: blue; */
     .aux-buttons-div {
       display: flex;
-      width: 25%;
+      width: 20%;
       height: 65%;
       /* background-color: red; */
       align-items: center;
@@ -29,20 +29,26 @@ const HeaderContainer = styled.section`
 `;
 
 const Logo = styled.div`
-  width: 15%;
-  /* background-color: green; */
+  width: 25%;
+  max-width: 150px;
+  height: 65%;
   display: flex;
   align-items: center;
   justify-content: center;
   a { 
-    color: #209CEE; 
-    font-family: 'Abhaya Libre', serif;
-    font-weight: 700;
-    font-size: 2em;
-    letter-spacing: 0.1px;
-  }
-  a:hover {
-    cursor: pointer;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    img {
+      width: 100%;
+      max-width: 150px;
+      height: 100%;
+      max-height: 30px;
+      cursor: pointer;
+    }
   }
 `;
 
@@ -54,7 +60,7 @@ const SearchBar = styled.div`
   background-color: #ffffff;
   
   height: 65%;
-  width: 30%;
+  width: 35%;
   textarea:focus,
   input:focus,
   select:focus {
