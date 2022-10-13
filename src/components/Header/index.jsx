@@ -5,7 +5,8 @@ import PlaceAnAd from './PlaceAnAd';
 import Login from './Login';
 
 import bookstore_logotext from '../../assets/bookstore_logotext.png'
-import { HeaderContainer, Logo, SearchBar } from './style';
+import search_outline from '../../assets/search_outline.png'
+import { HeaderContainer, Logo, SearchBar, ImgSearchBar } from './style';
 
 export default function Header() {
   return (
@@ -17,6 +18,7 @@ export default function Header() {
           </Link>
         </Logo>
         <SearchBar>
+          <ImgSearchBar style={{ backgroundImage: `url(${search_outline})` }}/>
           <input type='text' placeholder='Search by Title or Author'/>
         </SearchBar>
         <div className='aux-buttons-div'>
