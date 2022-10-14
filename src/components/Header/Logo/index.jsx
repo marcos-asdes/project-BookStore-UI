@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 
-import bookstore_logotext from '../../assets/bookstore_logotext.png'
+import bookstore_logotext from '../../../assets/bookstore_logotext.png'
 
 import { LogoContainer } from './style'
 

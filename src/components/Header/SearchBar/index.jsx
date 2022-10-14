@@ -1,6 +1,6 @@
 import React from 'react'
 
-import search_outline from '../../assets/search_outline.png'
+import search_outline from '../../../assets/search_outline.png'
 
 import { SearchBarContainer, ImgSearchBar } from './style'
 
