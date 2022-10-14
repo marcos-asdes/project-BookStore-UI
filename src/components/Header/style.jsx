@@ -79,8 +79,8 @@ const SearchBar = styled.div`
   input {
     height: 100%;
     width: 95%;
-    padding-left: 5%;
-    padding-right: 5%;
+    padding-left: 10px;
+    padding-right: 10px;
     font-family: "Inter", sans-serif;
     letter-spacing: .1px;
     font-weight: 500;
