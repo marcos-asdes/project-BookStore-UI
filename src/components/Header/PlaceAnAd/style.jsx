@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const PlaceAnAdContainer = styled.button`
   width: 55%;
@@ -18,7 +18,7 @@ const PlaceAnAdContainer = styled.button`
   align-items: center;
   flex-wrap: wrap;
   cursor: pointer;
-`;
+`
 
 export {
   PlaceAnAdContainer
