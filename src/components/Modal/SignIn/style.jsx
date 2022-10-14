@@ -16,15 +16,15 @@ const SignInWrapper = styled.div`
 const LoginContainer = styled.div`
   width: 350px;
   height: fit-content;
-  background-color: #FFFFFF;
-  border: 1px solid #FFFFFF;
+  background-color: #ffffff;
+  border: 1px solid #ffffff;
   border-radius: 20px;
-  font-family: "Inter", sans-serif;
-  font-size: .8em;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.8em;
   outline: 0;
   overflow: hidden;
   position: relative;
- 
+
   .aux-div-signin-modal-spacer {
     width: 100%;
     height: 50px;
@@ -34,13 +34,13 @@ const LoginContainer = styled.div`
 
     p {
       font-size: 1.25em;
-      color: #7B807E;
+      color: #7b807e;
     }
 
     .signin-modal-spacer {
       width: 35%;
       height: 1px;
-      background-color: #D7D7D7;
+      background-color: #d7d7d7;
     }
   }
 
@@ -49,26 +49,26 @@ const LoginContainer = styled.div`
     margin: 12px 0 25px 22.5px;
 
     p {
-      font-family: "Inter", sans-serif;
+      font-family: 'Inter', sans-serif;
       font-weight: 500;
-      letter-spacing: .8px;
-      color: #7B807E;
+      letter-spacing: 0.8px;
+      color: #7b807e;
       font-size: 12.5px;
       height: 12.5px;
       width: 32%;
     }
 
     a {
-      font-family: "Inter", sans-serif;
+      font-family: 'Inter', sans-serif;
       font-weight: 500;
-      letter-spacing: .8px;
+      letter-spacing: 0.8px;
       font-size: 12.5px;
       width: 85%;
       display: flex;
       left: 0;
       justify-content: flex-start;
       align-items: flex-start;
-      color: #209CEE;
+      color: #209cee;
       cursor: pointer;
     }
   }
@@ -87,8 +87,4 @@ const Title = styled.div`
   color: #000000;
 `
 
-export {
-  SignInWrapper,
-  LoginContainer,
-  Title
-}
+export { SignInWrapper, LoginContainer, Title }

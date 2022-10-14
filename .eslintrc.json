@@ -1,28 +1,23 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "parser": "@babel/eslint-parser",
+  "parserOptions": {
+    "ecmaVersion": 6,
+    "babelOptions": {
+      "presets": ["@babel/preset-react"]
     },
-    "extends": [
-        "eslint:recommended",
-        "plugin:react/recommended"
-    ],
-    "parser": "@babel/eslint-parser",
-    "parserOptions": {
-        "ecmaVersion": 6,
-        "babelOptions": {
-            "presets": ["@babel/preset-react"]
-        },
-        "requireConfigFile": false,
-        "sourceType": "module",
-        "ecmaFeatures": {
-          "modules": true
-        }
-    },
-    "plugins": [
-        "react"
-    ],
-    "rules": {
-        "linebreak-style": 0
+    "requireConfigFile": false,
+    "sourceType": "module",
+    "ecmaFeatures": {
+      "modules": true
     }
+  },
+  "plugins": ["react"],
+  "rules": {
+    "linebreak-style": 0
+  }
 }

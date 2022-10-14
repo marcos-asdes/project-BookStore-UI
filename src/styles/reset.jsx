@@ -1,5 +1,5 @@
-import { createGlobalStyle } from 'styled-components';
-import reset from 'styled-reset';
+import { createGlobalStyle } from 'styled-components'
+import reset from 'styled-reset'
 
 const StyledReset = createGlobalStyle`
   ${reset}
@@ -38,6 +38,6 @@ const StyledReset = createGlobalStyle`
     text-decoration: none;
     color: #000;
   }
-`;
+`
 
-export default StyledReset;
+export default StyledReset

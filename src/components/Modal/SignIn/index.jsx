@@ -36,16 +36,18 @@ export default function SignIn(props) {
   return (
     <SignInWrapper className='exit-modal'>
       <LoginContainer>
-        <ExitModal clickListener={clickListener} 
-        setModalSignInIsVisible={setModalSignInIsVisible}/>
+        <ExitModal
+          clickListener={clickListener}
+          setModalSignInIsVisible={setModalSignInIsVisible}
+        />
         <Title>Log in to BookStore</Title>
-        <OAuth/>
+        <OAuth />
         <div className='aux-div-signin-modal-spacer'>
-          <div className='signin-modal-spacer'/>
+          <div className='signin-modal-spacer' />
           <p>or</p>
-          <div className='signin-modal-spacer'/>
+          <div className='signin-modal-spacer' />
         </div>
-        <Form/>
+        <Form />
         <div className='redirect-create-account'>
           <p>No account?</p>
           <Link to='/'>Create one</Link>

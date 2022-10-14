@@ -11,7 +11,7 @@ const OAuthContainer = styled.div`
   .oauth-button {
     width: 40px;
     height: 40px;
-    background-color: #EFEFEF;
+    background-color: #efefef;
     border-radius: 20px;
     margin: 0 10px 0 10px;
     border: none;
@@ -29,6 +29,4 @@ const OAuthContainer = styled.div`
   }
 `
 
-export {
-  OAuthContainer
-};
+export { OAuthContainer }

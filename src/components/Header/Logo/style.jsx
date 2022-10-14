@@ -5,13 +5,13 @@ const LogoContainer = styled.div`
   max-width: 150px;
   height: 65%;
 
-  a { 
+  a {
     width: 100%;
     height: 100%;
     display: flex;
     justify-content: center;
     align-items: center;
-    
+
     img {
       width: 100%;
       max-width: 150px;
@@ -22,6 +22,4 @@ const LogoContainer = styled.div`
   }
 `
 
-export {
-  LogoContainer
-}
+export { LogoContainer }

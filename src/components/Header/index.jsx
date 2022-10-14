@@ -11,11 +11,11 @@ export default function Header() {
   return (
     <HeaderContainer>
       <div className='aux-div'>
-        <Logo/>
-        <SearchBar/>
+        <Logo />
+        <SearchBar />
         <div className='aux-buttons-div'>
-          <PlaceAnAd/>
-          <Login/>
+          <PlaceAnAd />
+          <Login />
         </div>
       </div>
     </HeaderContainer>

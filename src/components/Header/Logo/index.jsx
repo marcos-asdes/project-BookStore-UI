@@ -9,7 +9,7 @@ export default function Logo() {
   return (
     <LogoContainer>
       <Link to='/'>
-        <img src={bookstore_logotext} alt='BookStore'/>
+        <img src={bookstore_logotext} alt='BookStore' />
       </Link>
     </LogoContainer>
   )

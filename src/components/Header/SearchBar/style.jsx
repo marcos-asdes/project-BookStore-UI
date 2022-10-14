@@ -17,7 +17,7 @@ const SearchBarContainer = styled.div`
   background-color: #ffffff;
   height: 65%;
   width: 35%;
-  
+
   textarea:focus,
   input:focus,
   select:focus {
@@ -31,8 +31,8 @@ const SearchBarContainer = styled.div`
     width: 95%;
     padding-left: 10px;
     padding-right: 10px;
-    font-family: "Inter", sans-serif;
-    letter-spacing: .1px;
+    font-family: 'Inter', sans-serif;
+    letter-spacing: 0.1px;
     font-weight: 500;
     font-size: 16px;
     border: 0 none;
@@ -40,7 +40,4 @@ const SearchBarContainer = styled.div`
   }
 `
 
-export {
-  ImgSearchBar,
-  SearchBarContainer
-}
+export { ImgSearchBar, SearchBarContainer }

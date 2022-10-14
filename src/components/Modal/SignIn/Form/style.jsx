@@ -9,7 +9,7 @@ const FormContainer = styled.form`
   .wrapper-input {
     width: 85%;
     position: relative;
-    border-bottom: 2px solid #ADADAD;
+    border-bottom: 2px solid #adadad;
 
     :first-child {
       margin-top: 10px;
@@ -25,54 +25,53 @@ const FormContainer = styled.form`
     }
 
     .input {
-      font-family: "Inter", sans-serif;
+      font-family: 'Inter', sans-serif;
       font-size: 15px;
       color: #000;
       line-height: 1.2;
-      letter-spacing: .8px;
+      letter-spacing: 0.8px;
       border: none;
       display: block;
       width: 100%;
       height: 40px;
       background-color: transparent;
       padding: 0 5px;
-      
     }
 
     .focus-input,
     .focus-input-error {
-      font-family: "Inter", sans-serif;
+      font-family: 'Inter', sans-serif;
       position: absolute;
       display: block;
       width: 100%;
       height: 100%;
-      top:0;
-      left:0;
+      top: 0;
+      left: 0;
       pointer-events: none;
       color: #000;
-      letter-spacing: .8px;
+      letter-spacing: 0.8px;
     }
 
     .focus-input::before {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       bottom: -2px;
       left: 0;
       width: 100%;
       height: 2px;
-      background: #209CEE;
+      background: #209cee;
     }
 
     .focus-input-error::before {
-      content: "";
+      content: '';
       display: block;
       position: absolute;
       bottom: -2px;
       left: 0;
       width: 100%;
       height: 2px;
-      background: #FF0000;
+      background: #ff0000;
     }
 
     .focus-input::after,
@@ -119,16 +118,16 @@ const FormContainer = styled.form`
   }
 
   a {
-    font-family: "Inter", sans-serif;
+    font-family: 'Inter', sans-serif;
     font-weight: 500;
-    letter-spacing: .8px;
+    letter-spacing: 0.8px;
     font-size: 12.5px;
     width: 85%;
     display: flex;
     left: 0;
     justify-content: flex-start;
     align-items: flex-start;
-    color: #209CEE;
+    color: #209cee;
     cursor: pointer;
   }
 
@@ -141,7 +140,7 @@ const FormContainer = styled.form`
     margin-top: 25px;
 
     .login-btn {
-      font-family: "Inter", sans-serif;
+      font-family: 'Inter', sans-serif;
       font-weight: 700;
       font-size: 15px;
       border: none;
@@ -155,10 +154,10 @@ const FormContainer = styled.form`
       width: 100%;
       height: 50px;
 
-      background: -webkit-linear-gradient(to left, #209CEE, #209CEE);
-      background: -o-linear-gradient(to left, #209CEE, #209CEE);
-      background: -moz-linear-gradient(to left, #209CEE, #209CEE);
-      background: linear-gradient(to left, #209CEE, #209CEE);
+      background: -webkit-linear-gradient(to left, #209cee, #209cee);
+      background: -o-linear-gradient(to left, #209cee, #209cee);
+      background: -moz-linear-gradient(to left, #209cee, #209cee);
+      background: linear-gradient(to left, #209cee, #209cee);
     }
 
     .login-btn:hover {
@@ -167,6 +166,4 @@ const FormContainer = styled.form`
   }
 `
 
-export {
-  FormContainer
-}
+export { FormContainer }

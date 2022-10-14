@@ -25,13 +25,13 @@ const theme = {
     foreground: 'rgb(51, 51, 51)',
 
     success: 'rgb(118,185,71)',
-    danger: 'rgb(255,0,0)',
+    danger: 'rgb(255,0,0)'
   },
   fonts: {
     logotype: "'Passion One', cursive;",
     primary: "'Oswald', sans-serif;",
     secondary: "'Lato', sans-serif;",
-    forms: "'Lexend Deca', sans-serif;",
+    forms: "'Lexend Deca', sans-serif;"
   },
   mixins: {
     flexbox: (direction, justify, align, gap) => `
@@ -47,13 +47,13 @@ const theme = {
         right: ${right};
         bottom: ${bottom};
         left: ${left};
-        `,
+        `
   },
   styles: {
     defaultBorder: '1px solid rgb(76, 30, 79)',
     borderRadius: '5px',
-    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)',
-  },
-};
+    boxShadow: '0px 4px 4px rgba(0, 0, 0, 0.25)'
+  }
+}
 
-export default theme;
+export default theme

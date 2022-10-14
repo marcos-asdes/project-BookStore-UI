@@ -7,20 +7,18 @@ const LoginButton = styled.button`
   width: 35%;
   height: 100%;
   box-shadow: 0 0 0 0;
-  border: 1px solid #209CEE;
-  color: #209CEE;
+  border: 1px solid #209cee;
+  color: #209cee;
   background-color: white;
   outline: 0;
   border-radius: 20px;
-  font-family: "Inter", sans-serif;
-  letter-spacing: .1px;
+  font-family: 'Inter', sans-serif;
+  letter-spacing: 0.1px;
   font-size: 80%;
   font-weight: 700;
   line-height: 1em;
   cursor: pointer;
   flex-wrap: wrap;
-`;
+`
 
-export {
-  LoginButton
-};
+export { LoginButton }

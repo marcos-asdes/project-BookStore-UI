@@ -16,7 +16,7 @@ const HeaderContainer = styled.section`
     height: 60px;
     align-items: center;
     justify-content: space-around;
-  
+
     .aux-buttons-div {
       display: flex;
       width: 20%;
@@ -28,6 +28,4 @@ const HeaderContainer = styled.section`
   }
 `
 
-export {
-  HeaderContainer
-}
+export { HeaderContainer }

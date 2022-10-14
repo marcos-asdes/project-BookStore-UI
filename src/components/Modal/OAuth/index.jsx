@@ -9,15 +9,15 @@ import github_logo from '../../../assets/github_logo.png'
 export default function OAuth() {
   return (
     <OAuthContainer>
-          <div className='oauth-button'>
-            <img src={google_logo} alt='google_logo'/>
-          </div>
-          <div className='oauth-button'>
-            <img src={facebook_logo} alt='facebook-logo'/>
-          </div>
-          <div className='oauth-button'>
-            <img src={github_logo} alt='github_logo'/>
-          </div>
+      <div className='oauth-button'>
+        <img src={google_logo} alt='google_logo' />
+      </div>
+      <div className='oauth-button'>
+        <img src={facebook_logo} alt='facebook-logo' />
+      </div>
+      <div className='oauth-button'>
+        <img src={github_logo} alt='github_logo' />
+      </div>
     </OAuthContainer>
   )
 }

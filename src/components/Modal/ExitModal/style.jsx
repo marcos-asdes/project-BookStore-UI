@@ -17,6 +17,4 @@ const ExitModalContainer = styled.div`
   }
 `
 
-export {
-  ExitModalContainer
-}
+export { ExitModalContainer }

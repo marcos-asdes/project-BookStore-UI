@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from 'styled-components'
 
 const Main = styled.main`
   display: flex;
@@ -7,8 +7,6 @@ const Main = styled.main`
   margin-top: 80px;
   margin-left: 20px;
   margin-bottom: 80px;
-`;
+`
 
-export {
-  Main
-}
+export { Main }
