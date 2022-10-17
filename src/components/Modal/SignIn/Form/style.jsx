@@ -9,7 +9,6 @@ const FormContainer = styled.form`
   .wrapper-input {
     width: 85%;
     position: relative;
-    border-bottom: 2px solid #adadad;
 
     :first-child {
       margin-top: 10px;
@@ -25,9 +24,8 @@ const FormContainer = styled.form`
     }
 
     .input {
-      font-family: 'Inter', sans-serif;
       font-size: 15px;
-      color: #000;
+      font-weight: 400;
       line-height: 1.2;
       letter-spacing: 0.8px;
       border: none;
@@ -36,11 +34,18 @@ const FormContainer = styled.form`
       height: 40px;
       background-color: transparent;
       padding: 0 5px;
+      // theme
+      color: ${props => props.theme.colors.black};
+      font-family: ${props => props.theme.fonts.primary};
+    }
+
+    input:-webkit-autofill {
+      box-shadow: 0 0 0 30px white inset;
+      -webkit-box-shadow: 0 0 0 30px white inset;
     }
 
     .focus-input,
     .focus-input-error {
-      font-family: 'Inter', sans-serif;
       position: absolute;
       display: block;
       width: 100%;
@@ -48,8 +53,10 @@ const FormContainer = styled.form`
       top: 0;
       left: 0;
       pointer-events: none;
-      color: #000;
       letter-spacing: 0.8px;
+      // theme
+      font-family: ${props => props.theme.fonts.primary};
+      color: ${props => props.theme.colors.black};
     }
 
     .focus-input::before {
@@ -60,7 +67,12 @@ const FormContainer = styled.form`
       left: 0;
       width: 100%;
       height: 2px;
-      background: #209cee;
+      transition: all 0.5s ease-in-out 0s;
+      -webkit-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      // theme
+      background: ${props => props.theme.colors.secondary};
     }
 
     .focus-input-error::before {
@@ -71,13 +83,17 @@ const FormContainer = styled.form`
       left: 0;
       width: 100%;
       height: 2px;
-      background: #ff0000;
+      transition: all 0.5s ease-in-out 0s;
+      -webkit-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      // theme
+      background: ${props => props.theme.colors.alert};
     }
 
     .focus-input::after,
     .focus-input-error::after {
       font-size: 15px;
-      color: #999999;
       line-height: 1.2;
       content: attr(data-placeholder);
       display: block;
@@ -86,10 +102,12 @@ const FormContainer = styled.form`
       top: 16px;
       left: 0;
       padding-left: 5px;
-      transition: all 400ms ease-in-out 0s;
-      -webkit-transition: all 0.4s;
-      -o-transition: all 0.4s;
-      -moz-transition: all 0.4s;
+      transition: all 500ms ease-in-out 0s;
+      -webkit-transition: all 0.5s;
+      -o-transition: all 0.5s;
+      -moz-transition: all 0.5s;
+      // theme
+      color: ${props => props.theme.colors.darkGrey};
     }
 
     .input:focus {
@@ -98,7 +116,7 @@ const FormContainer = styled.form`
 
     .input:focus + .focus-input::after,
     .input:focus + .focus-input-error::after {
-      top: -17px;
+      top: -15px;
     }
 
     .input:focus + .focus-input::before,
@@ -108,7 +126,7 @@ const FormContainer = styled.form`
 
     .has-value + .focus-input::after,
     .has-value + .focus-input-error::after {
-      top: -17px;
+      top: -15px;
     }
 
     .has-value + .focus-input::before,
@@ -118,7 +136,6 @@ const FormContainer = styled.form`
   }
 
   a {
-    font-family: 'Inter', sans-serif;
     font-weight: 500;
     letter-spacing: 0.8px;
     font-size: 12.5px;
@@ -127,8 +144,10 @@ const FormContainer = styled.form`
     left: 0;
     justify-content: flex-start;
     align-items: flex-start;
-    color: #209cee;
     cursor: pointer;
+    // theme
+    font-family: ${props => props.theme.fonts.primary};
+    color: ${props => props.theme.colors.secondary};
   }
 
   .wrapper-login-btn {
@@ -140,12 +159,10 @@ const FormContainer = styled.form`
     margin-top: 25px;
 
     .login-btn {
-      font-family: 'Inter', sans-serif;
       font-weight: 700;
       font-size: 15px;
       border: none;
       border-radius: 10px;
-      color: #fff;
       line-height: 1.2;
       text-transform: uppercase;
       display: flex;
@@ -153,15 +170,37 @@ const FormContainer = styled.form`
       align-items: center;
       width: 100%;
       height: 50px;
-
-      background: -webkit-linear-gradient(to left, #209cee, #209cee);
-      background: -o-linear-gradient(to left, #209cee, #209cee);
-      background: -moz-linear-gradient(to left, #209cee, #209cee);
-      background: linear-gradient(to left, #209cee, #209cee);
+      // theme
+      font-family: ${props => props.theme.fonts.primary};
+      color: ${props => props.theme.colors.white};
+      background: -webkit-linear-gradient(
+        to left,
+        ${props => props.theme.colors.primary},
+        ${props => props.theme.colors.secondary}
+      );
+      background: -o-linear-gradient(
+        to left,
+        ${props => props.theme.colors.primary},
+        ${props => props.theme.colors.secondary}
+      );
+      background: -moz-linear-gradient(
+        to left,
+        ${props => props.theme.colors.primary},
+        ${props => props.theme.colors.secondary}
+      );
+      background: linear-gradient(
+        to left,
+        ${props => props.theme.colors.primary},
+        ${props => props.theme.colors.secondary}
+      );
+      background-size: 250%;
+      background-position: left;
+      transition: background-position 1s;
     }
 
     .login-btn:hover {
       cursor: pointer;
+      background-position: right;
     }
   }
 `

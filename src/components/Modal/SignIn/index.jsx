@@ -40,7 +40,7 @@ export default function SignIn(props) {
           clickListener={clickListener}
           setModalSignInIsVisible={setModalSignInIsVisible}
         />
-        <Title>Log in to BookStore</Title>
+        <Title>Login to BookStore</Title>
         <OAuth />
         <div className='aux-div-signin-modal-spacer'>
           <div className='signin-modal-spacer' />

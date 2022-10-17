@@ -32,7 +32,7 @@ const IconContainer = styled.div`
   &:hover {
     cursor: pointer;
     // theme
-    background-color: ${props => props.theme.colors.grey};
+    background-color: ${props => props.theme.colors.lightGrey};
     color: ${props => props.theme.colors.primary};
   }
 

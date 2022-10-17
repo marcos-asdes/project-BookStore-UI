@@ -7,23 +7,25 @@ const SignInWrapper = styled.div`
   z-index: 1;
   left: 0;
   top: 0;
-  background-color: rgba(0, 0, 0, 0.33);
   display: flex;
   justify-content: center;
   align-items: center;
+  // theme
+  background-color: ${props => props.theme.colors.opacity};
 `
 
 const LoginContainer = styled.div`
   width: 350px;
   height: fit-content;
-  background-color: #ffffff;
-  border: 1px solid #ffffff;
   border-radius: 20px;
-  font-family: 'Inter', sans-serif;
   font-size: 0.8em;
   outline: 0;
   overflow: hidden;
   position: relative;
+  // theme
+  background-color: ${props => props.theme.colors.white};
+  border: 1px solid ${props => props.theme.colors.white};
+  font-family: ${props => props.theme.fonts.primary};
 
   .aux-div-signin-modal-spacer {
     width: 100%;
@@ -34,13 +36,15 @@ const LoginContainer = styled.div`
 
     p {
       font-size: 1.25em;
-      color: #7b807e;
+      // theme
+      color: ${props => props.theme.colors.darkGrey};
     }
 
     .signin-modal-spacer {
-      width: 35%;
-      height: 1px;
-      background-color: #d7d7d7;
+      width: 32.5%;
+      height: 2px;
+      // theme
+      background-color: ${props => props.theme.colors.mediumGrey};
     }
   }
 
@@ -49,17 +53,17 @@ const LoginContainer = styled.div`
     margin: 12px 0 25px 22.5px;
 
     p {
-      font-family: 'Inter', sans-serif;
       font-weight: 500;
       letter-spacing: 0.8px;
-      color: #7b807e;
       font-size: 12.5px;
       height: 12.5px;
       width: 32%;
+      // theme
+      font-family: ${props => props.theme.fonts.primary};
+      color: ${props => props.theme.colors.darkGrey};
     }
 
     a {
-      font-family: 'Inter', sans-serif;
       font-weight: 500;
       letter-spacing: 0.8px;
       font-size: 12.5px;
@@ -68,8 +72,10 @@ const LoginContainer = styled.div`
       left: 0;
       justify-content: flex-start;
       align-items: flex-start;
-      color: #209cee;
       cursor: pointer;
+      // theme
+      color: ${props => props.theme.colors.secondary};
+      font-family: ${props => props.theme.fonts.primary};
     }
   }
 `
@@ -80,11 +86,13 @@ const Title = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-  font-size: 20px;
+  font-size: 22.5px;
   font-weight: 500;
   letter-spacing: 0.1px;
   margin: 30px 0 30px 0;
-  color: #000000;
+  // theme
+  font-family: ${props => props.theme.fonts.secondary};
+  color: ${props => props.theme.colors.primary};
 `
 
 export { SignInWrapper, LoginContainer, Title }

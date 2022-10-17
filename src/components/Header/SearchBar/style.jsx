@@ -33,18 +33,18 @@ const SearchBarContainer = styled.div`
     padding-left: 10px;
     padding-right: 10px;
     letter-spacing: 0.1px;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 16px;
     border: 0 none;
     border-radius: 15px;
     // theme
     font-family: ${props => props.theme.fonts.primary};
-    color: ${props => props.theme.colors.secondary};
+    color: ${props => props.theme.colors.black};
   }
 
   input::placeholder {
     // theme
-    color: ${props => props.theme.colors.primary};
+    color: ${props => props.theme.colors.terciary};
   }
 
   @media screen and (min-width: 450px) and (max-width: 950px) {
