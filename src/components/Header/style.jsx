@@ -6,9 +6,10 @@ const HeaderContainer = styled.section`
   position: fixed;
   top: 0;
   width: 100%;
-  border-bottom: 1px solid #d7d7d7;
   z-index: 1;
-  background-color: #ffffff;
+  // theme
+  background-color: ${props => props.theme.colors.white};
+  border-bottom: 1px solid ${props => props.theme.colors.quaternary};
 
   .aux-div {
     display: flex;
@@ -20,10 +21,15 @@ const HeaderContainer = styled.section`
     .aux-buttons-div {
       display: flex;
       width: 20%;
-      height: 65%;
+      min-width: 100px;
+      height: 45px;
       align-items: center;
-      justify-content: space-around;
-      cursor: pointer;
+      justify-content: center;
+      gap: 10px;
+
+      @media screen and (max-width: 450px) {
+        display: none;
+      }
     }
   }
 `

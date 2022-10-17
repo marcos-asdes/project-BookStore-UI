@@ -1,7 +1,16 @@
 import React from 'react'
 
-import { PlaceAnAdContainer } from './style'
+import plus_icon from '../../../assets/plus_icon.svg'
+
+import { PlaceAnAdContainer, PlaceAnAdMobile } from './style'
 
 export default function PlaceAnAd() {
-  return <PlaceAnAdContainer>Place an ad</PlaceAnAdContainer>
+  return (
+    <>
+      <PlaceAnAdContainer>Place an ad</PlaceAnAdContainer>
+      <PlaceAnAdMobile>
+        <img src={plus_icon} alt='place an ad' />
+      </PlaceAnAdMobile>
+    </>
+  )
 }

@@ -13,10 +13,11 @@ const SearchBarContainer = styled.div`
   display: flex;
   align-items: center;
   border-radius: 15px;
-  border: 1px solid #d7d7d7;
-  background-color: #ffffff;
-  height: 65%;
-  width: 35%;
+  height: 45px;
+  width: 45%;
+  // theme
+  border: 1px solid ${props => props.theme.colors.quaternary};
+  background-color: ${props => props.theme.colors.white};
 
   textarea:focus,
   input:focus,
@@ -31,12 +32,27 @@ const SearchBarContainer = styled.div`
     width: 95%;
     padding-left: 10px;
     padding-right: 10px;
-    font-family: 'Inter', sans-serif;
     letter-spacing: 0.1px;
     font-weight: 500;
     font-size: 16px;
     border: 0 none;
     border-radius: 15px;
+    // theme
+    font-family: ${props => props.theme.fonts.primary};
+    color: ${props => props.theme.colors.secondary};
+  }
+
+  input::placeholder {
+    // theme
+    color: ${props => props.theme.colors.primary};
+  }
+
+  @media screen and (min-width: 450px) and (max-width: 950px) {
+    width: 50%;
+  }
+
+  @media screen and (max-width: 450px) {
+    display: none;
   }
 `
 

@@ -2,7 +2,9 @@ import React, { useState } from 'react'
 
 import SignIn from '../../Modal/SignIn'
 
-import { LoginButton } from './style.jsx'
+import login_icon from '../../../assets/profile_user.svg'
+
+import { LoginButton, LoginButtonMobile } from './style.jsx'
 
 export default function Login() {
   const [modalSignInIsVisible, setModalSignInIsVisible] = useState(false)
@@ -10,8 +12,11 @@ export default function Login() {
   return (
     <>
       <LoginButton onClick={() => setModalSignInIsVisible(true)}>
-        Log in
+        Login
       </LoginButton>
+      <LoginButtonMobile onClick={() => setModalSignInIsVisible(true)}>
+        <img src={login_icon} alt='login' />
+      </LoginButtonMobile>
       {modalSignInIsVisible && (
         <SignIn
           modalSignInIsVisible={modalSignInIsVisible}

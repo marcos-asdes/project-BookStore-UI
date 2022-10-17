@@ -1,6 +1,6 @@
 import React from 'react'
 
-import { AsideContainer } from './style'
+import { AsideContainer, IconContainer } from './style'
 
 export default function Aside() {
   const typesBooks = [
@@ -14,12 +14,14 @@ export default function Aside() {
     <AsideContainer>
       {typesBooks.map(e => {
         return (
-          <div className='icon-container' key={e.type}>
+          <IconContainer key={e.type}>
             <ion-icon name={e.iconName}></ion-icon>
             <p>{e.type}</p>
-          </div>
+          </IconContainer>
         )
       })}
     </AsideContainer>
   )
 }
+
+// adicionar mais typesBooks
