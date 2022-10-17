@@ -2,7 +2,7 @@ import styled from 'styled-components'
 
 const LogoContainer = styled.div`
   width: 25%;
-  max-width: 150px;
+  max-width: 200px;
   height: 65%;
 
   a {
@@ -14,9 +14,9 @@ const LogoContainer = styled.div`
 
     img {
       width: 100%;
-      max-width: 150px;
+      max-width: 200px;
       height: 100%;
-      max-height: 30px;
+      max-height: 45px;
       cursor: pointer;
     }
   }
