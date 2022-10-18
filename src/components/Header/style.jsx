@@ -9,7 +9,7 @@ const HeaderContainer = styled.section`
   z-index: 1;
   // theme
   background-color: ${props => props.theme.colors.white};
-  border-bottom: 1px solid ${props => props.theme.colors.quaternary};
+  border-bottom: 1px solid ${props => props.theme.colors.terciary};
 
   .aux-div {
     display: flex;

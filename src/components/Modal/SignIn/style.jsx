@@ -12,6 +12,10 @@ const SignInWrapper = styled.div`
   align-items: center;
   // theme
   background-color: ${props => props.theme.colors.opacity};
+
+  @media screen and (max-width: 450px) {
+    display: none;
+  }
 `
 
 const LoginContainer = styled.div`

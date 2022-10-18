@@ -26,3 +26,7 @@ export default function Login() {
     </>
   )
 }
+
+export { LoginButtonMobile }
+
+// refatorar componentes mobile login button e placeAnAd

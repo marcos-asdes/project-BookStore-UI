@@ -16,7 +16,7 @@ const SearchBarContainer = styled.div`
   height: 45px;
   width: 45%;
   // theme
-  border: 1px solid ${props => props.theme.colors.quaternary};
+  border: 1px solid ${props => props.theme.colors.terciary};
   background-color: ${props => props.theme.colors.white};
 
   textarea:focus,

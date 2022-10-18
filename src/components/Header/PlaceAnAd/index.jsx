@@ -14,3 +14,7 @@ export default function PlaceAnAd() {
     </>
   )
 }
+
+export { PlaceAnAdMobile }
+
+// // refatorar componentes mobile login button e placeAnAd
