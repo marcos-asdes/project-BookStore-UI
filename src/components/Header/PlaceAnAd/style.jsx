@@ -30,7 +30,7 @@ const PlaceAnAdContainer = styled.button`
   }
 `
 
-const PlaceAnAdMobile = styled.div`
+const PlaceAnAdTablet = styled.div`
   display: none;
 
   @media screen and (min-width: 450px) and (max-width: 950px) {
@@ -46,4 +46,4 @@ const PlaceAnAdMobile = styled.div`
   }
 `
 
-export { PlaceAnAdContainer, PlaceAnAdMobile }
+export { PlaceAnAdContainer, PlaceAnAdTablet }

@@ -4,7 +4,7 @@ import SignIn from '../../Modal/SignIn'
 
 import login_icon from '../../../assets/profile_user.svg'
 
-import { LoginButton, LoginButtonMobile } from './style.jsx'
+import { LoginButton, LoginButtonTablet } from './style.jsx'
 
 export default function Login() {
   const [modalSignInIsVisible, setModalSignInIsVisible] = useState(false)
@@ -14,9 +14,9 @@ export default function Login() {
       <LoginButton onClick={() => setModalSignInIsVisible(true)}>
         Login
       </LoginButton>
-      <LoginButtonMobile onClick={() => setModalSignInIsVisible(true)}>
+      <LoginButtonTablet onClick={() => setModalSignInIsVisible(true)}>
         <img src={login_icon} alt='login' />
-      </LoginButtonMobile>
+      </LoginButtonTablet>
       {modalSignInIsVisible && (
         <SignIn
           modalSignInIsVisible={modalSignInIsVisible}
@@ -26,7 +26,3 @@ export default function Login() {
     </>
   )
 }
-
-export { LoginButtonMobile }
-
-// refatorar componentes mobile login button e placeAnAd

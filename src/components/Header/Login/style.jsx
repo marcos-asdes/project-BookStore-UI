@@ -36,7 +36,7 @@ const LoginButton = styled.button`
   }
 `
 
-const LoginButtonMobile = styled.div`
+const LoginButtonTablet = styled.div`
   display: none;
 
   @media screen and (min-width: 450px) and (max-width: 950px) {
@@ -52,4 +52,4 @@ const LoginButtonMobile = styled.div`
   }
 `
 
-export { LoginButton, LoginButtonMobile }
+export { LoginButton, LoginButtonTablet }

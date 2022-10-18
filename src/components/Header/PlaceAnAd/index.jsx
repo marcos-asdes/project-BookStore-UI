@@ -2,19 +2,15 @@ import React from 'react'
 
 import plus_icon from '../../../assets/plus_icon.svg'
 
-import { PlaceAnAdContainer, PlaceAnAdMobile } from './style'
+import { PlaceAnAdContainer, PlaceAnAdTablet } from './style'
 
 export default function PlaceAnAd() {
   return (
     <>
       <PlaceAnAdContainer>Place an ad</PlaceAnAdContainer>
-      <PlaceAnAdMobile>
+      <PlaceAnAdTablet>
         <img src={plus_icon} alt='place an ad' />
-      </PlaceAnAdMobile>
+      </PlaceAnAdTablet>
     </>
   )
 }
-
-export { PlaceAnAdMobile }
-
-// // refatorar componentes mobile login button e placeAnAd
