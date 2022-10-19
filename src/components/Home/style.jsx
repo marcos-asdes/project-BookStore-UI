@@ -5,7 +5,7 @@ const Main = styled.main`
   justify-content: flex-start;
   align-items: flex-start;
   margin-top: 70px;
-  margin-left: 10px;
+  margin-left: 0px;
   margin-bottom: 70px;
 `
 
