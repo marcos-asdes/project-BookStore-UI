@@ -101,4 +101,3 @@ const nSeed = []
 export { nSeed }
 
 // seed simulando de forma superficial dados obtidos da API
-// o objetivo é montar a Grid do front

@@ -1,8 +1,9 @@
 import styled from 'styled-components'
 
 const AsideContainer = styled.aside`
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
+  position: fixed;
 `
 
 const IconContainer = styled.div`
@@ -11,11 +12,11 @@ const IconContainer = styled.div`
   align-items: center;
   justify-content: center;
   height: 100px;
-  width: 150px;
+  width: 125px;
   margin-bottom: 15px;
   border-radius: 7px;
   font-weight: 500;
-  font-size: 15px;
+  font-size: 14px;
   // theme
   color: ${props => props.theme.colors.terciary};
   font-family: ${props => props.theme.fonts.primary};
