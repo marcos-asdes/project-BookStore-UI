@@ -22,7 +22,9 @@
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",
-    "eslint": "npm init @eslint/config"
+    "eslint": "npm init @eslint/config",
+    "docker:build:image": "docker build -t bookstore-front .",
+    "docker:run:dockerfile": "docker run --rm -it --name web -p 3000:3000 bookstore-front"
   },
   "eslintConfig": {
     "extends": [
