@@ -1,17 +1,9 @@
 import React from 'react'
-import PropTypes from 'prop-types'
 
 import { BookContainer } from './style'
 
 export default function Book(props) {
   let { title, author, imageURL, price } = props
-
-  Book.propTypes = {
-    title: PropTypes.string,
-    author: PropTypes.string,
-    imageURL: PropTypes.string,
-    price: PropTypes.string
-  }
 
   price = price.replace('.', ',')
 

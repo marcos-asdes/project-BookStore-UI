@@ -1,6 +1,5 @@
 import React, { useEffect } from 'react'
 import { Link } from 'react-router-dom'
-import PropTypes from 'prop-types'
 
 import OAuth from '../OAuth'
 import ExitModal from '../ExitModal'
@@ -10,11 +9,6 @@ import { SignInWrapper, LoginContainer, Title } from './style'
 
 export default function SignIn(props) {
   const { modalSignInIsVisible, setModalSignInIsVisible } = props
-
-  SignIn.propTypes = {
-    modalSignInIsVisible: PropTypes.bool,
-    setModalSignInIsVisible: PropTypes.func
-  }
 
   useEffect(() => {
     if (modalSignInIsVisible) {

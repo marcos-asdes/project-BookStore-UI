@@ -12,6 +12,7 @@ const FooterContainer = styled.div`
     width: 100vw;
     height: 60px;
     z-index: 1;
+    // theme
     background-color: ${props => props.theme.colors.white};
     border-top: 1px solid ${props => props.theme.colors.terciary};
   }
