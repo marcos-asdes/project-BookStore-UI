@@ -5,17 +5,17 @@ import ExitModal from '../ExitModal'
 import OAuth from '../OAuth'
 import Form from './Form'
 
-import { LoginContainer, Title } from './style'
+import { RegisterContainer, Title } from './style'
 
-export default function SignIn(props) {
+export default function SignUp(props) {
   const {
-    modalSignInIsVisible,
-    setModalSignInIsVisible,
-    setModalSignUpIsVisible
+    modalSignUpIsVisible,
+    setModalSignUpIsVisible,
+    setModalSignInIsVisible
   } = props
 
   useEffect(() => {
-    if (modalSignInIsVisible) {
+    if (modalSignUpIsVisible) {
       window.addEventListener('click', clickListener)
     }
   }, [])
@@ -25,25 +25,25 @@ export default function SignIn(props) {
     if (typeof classNameString === 'string') {
       const classNameArray = classNameString.split(' ')
       if (classNameArray.includes('exit-modal')) {
-        setModalSignInIsVisible(false)
+        setModalSignUpIsVisible(false)
         window.removeEventListener('click', clickListener)
       }
     }
   }
 
   function switchModal() {
-    setModalSignInIsVisible(false)
-    setModalSignUpIsVisible(true)
+    setModalSignInIsVisible(true)
+    setModalSignUpIsVisible(false)
   }
 
   return (
     <Wrapper>
-      <LoginContainer>
+      <RegisterContainer>
         <ExitModal
           clickListener={clickListener}
-          setModalSignInIsVisible={setModalSignInIsVisible}
+          setModalSignUpIsVisible={setModalSignUpIsVisible}
         />
-        <Title>Login to BookStore</Title>
+        <Title>Create account</Title>
         <OAuth />
         <div className='aux-div-signin-modal-spacer'>
           <div className='signin-modal-spacer' />
@@ -52,10 +52,12 @@ export default function SignIn(props) {
         </div>
         <Form />
         <div className='redirect-create-account'>
-          <p>No account?</p>
-          <h1 onClick={switchModal}>Create one</h1>
+          <p>Already have an account?</p>
+          <h1 onClick={switchModal}>Login</h1>
         </div>
-      </LoginContainer>
+      </RegisterContainer>
     </Wrapper>
   )
 }
+
+// criar form e style

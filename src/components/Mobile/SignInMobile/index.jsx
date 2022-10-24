@@ -20,7 +20,6 @@ export default function SignInMobile() {
     }
   }, [mobileSignIn])
 
-  console.log(mobileSignIn)
   return (
     <>
       {mobileSignIn && (
@@ -45,3 +44,5 @@ export default function SignInMobile() {
     </>
   )
 }
+
+// corrigir dimensionamento de tela
