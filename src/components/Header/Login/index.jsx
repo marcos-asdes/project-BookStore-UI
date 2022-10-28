@@ -14,7 +14,7 @@ export default function Login() {
   return (
     <>
       <LoginButton onClick={() => setModalSignInIsVisible(true)}>
-        Login
+        Log In
       </LoginButton>
       <LoginButtonTablet onClick={() => setModalSignInIsVisible(true)}>
         <img src={login_icon} alt='login' />

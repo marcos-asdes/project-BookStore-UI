@@ -53,7 +53,7 @@ export default function SignUp(props) {
         <Form />
         <div className='redirect-create-account'>
           <p>Already have an account?</p>
-          <h1 onClick={switchModal}>Login</h1>
+          <h1 onClick={switchModal}>Log In</h1>
         </div>
       </RegisterContainer>
     </Wrapper>
