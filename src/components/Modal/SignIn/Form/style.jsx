@@ -9,19 +9,8 @@ const FormContainer = styled.form`
   .wrapper-input {
     width: 85%;
     position: relative;
-
-    :first-child {
-      margin-top: 10px;
-      margin-bottom: 32.5px;
-    }
-
-    :nth-child(2) {
-      margin-bottom: 20px;
-    }
-
-    :last-child {
-      margin-bottom: 20px;
-    }
+    margin-top: 16px;
+    margin-bottom: 16px;
 
     .input {
       font-size: 15px;
@@ -145,6 +134,7 @@ const FormContainer = styled.form`
     justify-content: flex-start;
     align-items: flex-start;
     cursor: pointer;
+    margin-top: 20px;
     // theme
     font-family: ${props => props.theme.fonts.primary};
     color: ${props => props.theme.colors.secondary};

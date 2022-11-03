@@ -6,7 +6,11 @@ import { schema } from '../../../../schemas/SignUpSchema'
 import { FormContainer } from './style'
 
 export default function Form() {
-  const { register, handleSubmit } = useForm({
+  const {
+    register,
+    handleSubmit,
+    formState: { errors }
+  } = useForm({
     resolver: yupResolver(schema)
   })
   const [form, setForm] = useState({})
@@ -22,33 +26,68 @@ export default function Form() {
 
   return (
     <FormContainer>
-      <input
-        type='email'
-        name='email'
-        {...register('email', { onChange: handleChange })}
-      />
-      <input
-        type='password'
-        name='password'
-        {...register('password', { onChange: handleChange })}
-      />
-      <div className='aux-div'>
+      <div className='wrapper-input'>
         <input
-          type='name'
-          name='name'
-          {...register('name', { onChange: handleChange })}
+          type='email'
+          name='email'
+          className={form.email ? 'has-value input' : 'input'}
+          {...register('email', { onChange: handleChange })}
         />
-        <input
-          type='surname'
-          name='surname'
-          {...register('surname', { onChange: handleChange })}
+        <span
+          className={!errors.email ? 'focus-input' : 'focus-input-error'}
+          data-placeholder='Email'
         />
       </div>
-      <input
-        type='phone'
-        name='phone'
-        {...register('phone', { onChange: handleChange })}
-      />
+      <div className='wrapper-input'>
+        <input
+          type='password'
+          name='password'
+          className={form.email ? 'has-value input' : 'input'}
+          {...register('password', { onChange: handleChange })}
+        />
+        <span
+          className={!errors.email ? 'focus-input' : 'focus-input-error'}
+          data-placeholder='Password'
+        />
+      </div>
+      <div className='aux-div'>
+        <div className='wrapper-input'>
+          <input
+            type='name'
+            name='name'
+            className={form.email ? 'has-value input' : 'input'}
+            {...register('name', { onChange: handleChange })}
+          />
+          <span
+            className={!errors.email ? 'focus-input' : 'focus-input-error'}
+            data-placeholder='Name'
+          />
+        </div>
+        <div className='wrapper-input'>
+          <input
+            type='surname'
+            name='surname'
+            className={form.email ? 'has-value input' : 'input'}
+            {...register('surname', { onChange: handleChange })}
+          />
+          <span
+            className={!errors.email ? 'focus-input' : 'focus-input-error'}
+            data-placeholder='Surname'
+          />
+        </div>
+      </div>
+      <div className='wrapper-input'>
+        <input
+          type='phone'
+          name='phone'
+          className={form.email ? 'has-value input' : 'input'}
+          {...register('phone', { onChange: handleChange })}
+        />
+        <span
+          className={!errors.email ? 'focus-input' : 'focus-input-error'}
+          data-placeholder='Phone'
+        />
+      </div>
       <div className='terms-of-service'></div>
       <div className='wrapper-login-btn'>
         <button className='login-btn' onClick={handleSubmit(onSubmit)}>
