@@ -1,14 +1,18 @@
-![Logo](https://raw.githubusercontent.com/marcos-asdes/project-BookStore-UI/bceade1b5d3fa2d1da95a9673d74e33f48c0b289/src/assets/logo_bookstore_1200dpi.svg)
+<div align="center">
+  <img alt="bookstore_logo" width="500px" src="https://raw.githubusercontent.com/marcos-asdes/project-BookStore-UI/bceade1b5d3fa2d1da95a9673d74e33f48c0b289/src/assets/logo_bookstore_1200dpi.svg" />
+</div>
 
-# [EM DESENVOLVIMENTO]
+<div align="center">
+  <h1>[EM DESENVOLVIMENTO]</h1>
+</div>
 
 A proposta desse projeto é ser um e-commerce de livros que apresentará todo ciclo de seleção e compra de produto(s), terá a lógica de registro, login e logout de usuário, terá a página personalizada de cada produto ao clicar nele, entre outras funcionalidades.
 
 ## Tech Stack
 
-**Cliente:** [Javascript] React
+**Cliente:** Javascript, React, HTML, CSS, StyledComponents
 
-**Servidor:** [Typescript] Node, Express, API REST
+**Servidor:** Typescript, Node, Express, API REST
 
 **Banco de dados:** postgres (SQL) com ORM Prisma, Redis (noSQL/cache)
 
