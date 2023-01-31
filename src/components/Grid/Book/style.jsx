@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 const BookContainer = styled.div`
-  width: 120px;
+  width: 108px;
   height: fit-content;
   font-family: ${props => props.theme.fonts.secondary};
   display: flex;
@@ -46,6 +46,7 @@ const BookContainer = styled.div`
     cursor: pointer;
     border-radius: 7.5px;
     margin-bottom: 2.5px;
+    border: 1px solid lightgrey;
   }
 
   @media screen and (max-width: 450px) {

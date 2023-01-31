@@ -156,7 +156,7 @@ const FormContainer = styled.form`
     flex-wrap: wrap;
     justify-content: center;
     padding-bottom: 13px;
-    margin-top: 25px;
+    margin-top: 13px;
 
     .login-btn {
       font-weight: 700;

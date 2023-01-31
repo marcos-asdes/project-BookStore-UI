@@ -124,20 +124,19 @@ const FormContainer = styled.form`
     }
   }
 
-  a {
-    font-weight: 500;
-    letter-spacing: 0.8px;
-    font-size: 12.5px;
+  .aux-start-div {
     width: 85%;
-    display: flex;
-    left: 0;
-    justify-content: flex-start;
-    align-items: flex-start;
-    cursor: pointer;
-    margin-top: 20px;
-    // theme
-    font-family: ${props => props.theme.fonts.primary};
-    color: ${props => props.theme.colors.secondary};
+    height: 12.5px;
+
+    a {
+      font-weight: 500;
+      letter-spacing: 0.8px;
+      font-size: 12.5px;
+      cursor: pointer;
+      // theme
+      font-family: ${props => props.theme.fonts.primary};
+      color: ${props => props.theme.colors.secondary};
+    }
   }
 
   .wrapper-login-btn {
@@ -145,8 +144,7 @@ const FormContainer = styled.form`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-bottom: 13px;
-    margin-top: 25px;
+    margin: 20px 0 20px 0;
 
     .login-btn {
       font-weight: 700;

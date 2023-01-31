@@ -52,8 +52,10 @@ export default function SignIn(props) {
         </div>
         <Form />
         <div className='redirect-create-account'>
-          <p>No account?</p>
-          <h1 onClick={switchModal}>Create one</h1>
+          <div className='inline-div'>
+            <p>No account?</p>
+            <h1 onClick={switchModal}>Create one</h1>
+          </div>
         </div>
       </LoginContainer>
     </Wrapper>

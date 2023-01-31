@@ -51,7 +51,9 @@ export default function Form() {
           data-placeholder='Password'
         />
       </div>
-      <Link to='/'>Forgot password?</Link>
+      <div className='aux-start-div'>
+        <Link to='/'>Forgot password?</Link>
+      </div>
       <div className='wrapper-login-btn'>
         <button className='login-btn' onClick={handleSubmit(onSubmit)}>
           Log In
