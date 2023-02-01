@@ -45,15 +45,17 @@ export default function SignUp(props) {
         />
         <Title>Create account</Title>
         <OAuth />
-        <div className='aux-div-signin-modal-spacer'>
-          <div className='signin-modal-spacer' />
+        <div className='aux-div-signup-modal-spacer'>
+          <div className='signup-modal-spacer' />
           <p>or</p>
-          <div className='signin-modal-spacer' />
+          <div className='signup-modal-spacer' />
         </div>
         <Form />
-        <div className='redirect-create-account'>
-          <p>Already have an account?</p>
-          <h1 onClick={switchModal}>Log In</h1>
+        <div className='redirect-login'>
+          <div className='aux-inline-div'>
+            <p>Already have an account?</p>
+            <h1 onClick={switchModal}>Log In</h1>
+          </div>
         </div>
       </RegisterContainer>
     </Wrapper>

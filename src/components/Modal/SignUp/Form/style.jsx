@@ -9,19 +9,8 @@ const FormContainer = styled.form`
   .wrapper-input {
     width: 85%;
     position: relative;
-
-    :first-child {
-      margin-top: 10px;
-      margin-bottom: 32.5px;
-    }
-
-    :nth-child(2) {
-      margin-bottom: 20px;
-    }
-
-    :last-child {
-      margin-bottom: 20px;
-    }
+    margin-top: 16px;
+    margin-bottom: 16px;
 
     .input {
       font-size: 15px;
@@ -135,19 +124,14 @@ const FormContainer = styled.form`
     }
   }
 
-  a {
-    font-weight: 500;
-    letter-spacing: 0.8px;
-    font-size: 12.5px;
-    width: 85%;
+  .alignment-aux-div {
     display: flex;
-    left: 0;
-    justify-content: flex-start;
-    align-items: flex-start;
-    cursor: pointer;
-    // theme
-    font-family: ${props => props.theme.fonts.primary};
-    color: ${props => props.theme.colors.secondary};
+    justify-content: space-between;
+    width: 85%;
+
+    .wrapper-input {
+      width: 47.5%;
+    }
   }
 
   .wrapper-login-btn {
@@ -155,8 +139,7 @@ const FormContainer = styled.form`
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    padding-bottom: 13px;
-    margin-top: 13px;
+    margin: 20px 0 20px 0;
 
     .login-btn {
       font-weight: 700;

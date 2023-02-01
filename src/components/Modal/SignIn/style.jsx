@@ -1,23 +1,5 @@
 import styled from 'styled-components'
 
-const SignInWrapper = styled.div`
-  width: 100vw;
-  height: 100vh;
-  position: fixed;
-  z-index: 1;
-  left: 0;
-  top: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  // theme
-  background-color: ${props => props.theme.colors.opacity};
-
-  @media screen and (max-width: 450px) {
-    display: none;
-  }
-`
-
 const LoginContainer = styled.div`
   width: 350px;
   height: fit-content;
@@ -58,7 +40,7 @@ const LoginContainer = styled.div`
     justify-content: center;
     margin-bottom: 25px;
 
-    .inline-div {
+    .aux-inline-div {
       width: 85%;
       display: inline-flex;
 
@@ -99,10 +81,10 @@ const Title = styled.div`
   font-size: 22.5px;
   font-weight: 500;
   letter-spacing: 0.1px;
-  margin: 30px 0 30px 0;
+  margin: 30px 0 20px 0;
   // theme
   font-family: ${props => props.theme.fonts.secondary};
   color: ${props => props.theme.colors.primary};
 `
 
-export { SignInWrapper, LoginContainer, Title }
+export { LoginContainer, Title }

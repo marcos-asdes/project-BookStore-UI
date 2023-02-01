@@ -42,24 +42,24 @@ export default function Form() {
         <input
           type='password'
           name='password'
-          className={form.email ? 'has-value input' : 'input'}
+          className={form.password ? 'has-value input' : 'input'}
           {...register('password', { onChange: handleChange })}
         />
         <span
-          className={!errors.email ? 'focus-input' : 'focus-input-error'}
+          className={!errors.password ? 'focus-input' : 'focus-input-error'}
           data-placeholder='Password'
         />
       </div>
-      <div className='aux-div'>
+      <div className='alignment-aux-div'>
         <div className='wrapper-input'>
           <input
             type='name'
             name='name'
-            className={form.email ? 'has-value input' : 'input'}
+            className={form.name ? 'has-value input' : 'input'}
             {...register('name', { onChange: handleChange })}
           />
           <span
-            className={!errors.email ? 'focus-input' : 'focus-input-error'}
+            className={!errors.name ? 'focus-input' : 'focus-input-error'}
             data-placeholder='Name'
           />
         </div>
@@ -67,11 +67,11 @@ export default function Form() {
           <input
             type='surname'
             name='surname'
-            className={form.email ? 'has-value input' : 'input'}
+            className={form.surname ? 'has-value input' : 'input'}
             {...register('surname', { onChange: handleChange })}
           />
           <span
-            className={!errors.email ? 'focus-input' : 'focus-input-error'}
+            className={!errors.surname ? 'focus-input' : 'focus-input-error'}
             data-placeholder='Surname'
           />
         </div>
@@ -80,11 +80,11 @@ export default function Form() {
         <input
           type='phone'
           name='phone'
-          className={form.email ? 'has-value input' : 'input'}
+          className={form.phone ? 'has-value input' : 'input'}
           {...register('phone', { onChange: handleChange })}
         />
         <span
-          className={!errors.email ? 'focus-input' : 'focus-input-error'}
+          className={!errors.phone ? 'focus-input' : 'focus-input-error'}
           data-placeholder='Phone'
         />
       </div>

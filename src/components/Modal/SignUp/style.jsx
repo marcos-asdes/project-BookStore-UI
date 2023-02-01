@@ -13,9 +13,9 @@ const RegisterContainer = styled.div`
   border: 1px solid ${props => props.theme.colors.white};
   font-family: ${props => props.theme.fonts.primary};
 
-  .aux-div-signin-modal-spacer {
+  .aux-div-signup-modal-spacer {
     width: 100%;
-    height: 50px;
+    height: 20px;
     display: flex;
     justify-content: space-evenly;
     align-items: center;
@@ -26,7 +26,7 @@ const RegisterContainer = styled.div`
       color: ${props => props.theme.colors.darkGrey};
     }
 
-    .signin-modal-spacer {
+    .signup-modal-spacer {
       width: 32.5%;
       height: 2px;
       // theme
@@ -34,34 +34,40 @@ const RegisterContainer = styled.div`
     }
   }
 
-  .redirect-create-account {
+  .redirect-login {
     display: flex;
-    margin: 12px 0 25px 22.5px;
+    width: 100%;
+    justify-content: center;
+    margin-bottom: 25px;
 
-    p {
-      font-weight: 500;
-      letter-spacing: 0.8px;
-      font-size: 12.5px;
-      height: 12.5px;
-      width: 32%;
-      // theme
-      font-family: ${props => props.theme.fonts.primary};
-      color: ${props => props.theme.colors.darkGrey};
-    }
-
-    a {
-      font-weight: 500;
-      letter-spacing: 0.8px;
-      font-size: 12.5px;
+    .aux-inline-div {
       width: 85%;
-      display: flex;
-      left: 0;
-      justify-content: flex-start;
-      align-items: flex-start;
-      cursor: pointer;
-      // theme
-      color: ${props => props.theme.colors.secondary};
-      font-family: ${props => props.theme.fonts.primary};
+      display: inline-flex;
+
+      p {
+        font-weight: 500;
+        letter-spacing: 0.8px;
+        font-size: 12.5px;
+        height: 12.5px;
+        margin-right: 10px;
+        // theme
+        font-family: ${props => props.theme.fonts.primary};
+        color: ${props => props.theme.colors.darkGrey};
+      }
+
+      h1 {
+        font-weight: 500;
+        letter-spacing: 0.8px;
+        font-size: 12.5px;
+        display: flex;
+        left: 0;
+        justify-content: flex-start;
+        align-items: flex-start;
+        cursor: pointer;
+        // theme
+        color: ${props => props.theme.colors.secondary};
+        font-family: ${props => props.theme.fonts.primary};
+      }
     }
   }
 `
@@ -75,7 +81,7 @@ const Title = styled.div`
   font-size: 22.5px;
   font-weight: 500;
   letter-spacing: 0.1px;
-  margin: 30px 0 30px 0;
+  margin: 30px 0 20px 0;
   // theme
   font-family: ${props => props.theme.fonts.secondary};
   color: ${props => props.theme.colors.primary};

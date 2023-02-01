@@ -52,7 +52,7 @@ export default function SignIn(props) {
         </div>
         <Form />
         <div className='redirect-create-account'>
-          <div className='inline-div'>
+          <div className='aux-inline-div'>
             <p>No account?</p>
             <h1 onClick={switchModal}>Create one</h1>
           </div>
