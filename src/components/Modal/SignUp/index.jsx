@@ -41,6 +41,7 @@ export default function SignUp(props) {
       <RegisterContainer>
         <ExitModal
           clickListener={clickListener}
+          setModalSignInIsVisible={setModalSignInIsVisible}
           setModalSignUpIsVisible={setModalSignUpIsVisible}
         />
         <Title>Create account</Title>

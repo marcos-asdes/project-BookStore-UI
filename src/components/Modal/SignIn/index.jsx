@@ -42,6 +42,7 @@ export default function SignIn(props) {
         <ExitModal
           clickListener={clickListener}
           setModalSignInIsVisible={setModalSignInIsVisible}
+          setModalSignUpIsVisible={setModalSignUpIsVisible}
         />
         <Title>Login to BookStore</Title>
         <OAuth />
