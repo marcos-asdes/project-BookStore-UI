@@ -1,9 +1,9 @@
-import React, { useState, createContext } from 'react'
+import React, { /* useState,  */ createContext } from 'react'
 
 const AuthContext = createContext()
 
 function AuthProvider({ children }) {
-  const [user, setUser] = useState(null)
+  /*   const [user, setUser] = useState(null)
 
   function login(email, password) {
     console.log('login efetuado', { email, password })
@@ -12,15 +12,11 @@ function AuthProvider({ children }) {
 
   function logout() {
     console.log('logout efetuado')
-  }
+  } */
 
-  return (
-    <AuthContext.Provider
-      value={{ authenticated: !!user, user, login, logout }}
-    >
-      {children}
-    </AuthContext.Provider>
-  )
+  return <AuthContext.Provider>{children}</AuthContext.Provider>
 }
 
-export { AuthProvider }
+// value={{ authenticated: !!user, user, login, logout }}
+
+export { AuthProvider, AuthContext }

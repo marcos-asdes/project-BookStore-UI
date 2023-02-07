@@ -3,7 +3,7 @@ import React, { useState } from 'react'
 import SignIn from '../../Modal/SignIn'
 import SignUp from '../../Modal/SignUp'
 
-import login_icon from '../../../assets/profile_user.svg'
+import login_icon from '../../../../assets/profile_user.svg'
 
 import { LoginButton, LoginButtonTablet } from './style.jsx'
 

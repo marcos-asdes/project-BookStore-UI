@@ -1,8 +1,11 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
+import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
 
-import { schema } from '../../../../schemas/SignUpSchema'
+import { AuthContext } from '../../../../../contexts/AuthContext'
+
+import { schema } from '../../../../../schemas/SignInSchema'
 import { FormContainer } from './style'
 
 export default function Form() {
@@ -14,14 +17,21 @@ export default function Form() {
     resolver: yupResolver(schema)
   })
   const [form, setForm] = useState({})
+  const { authenticated, login } = useContext(AuthContext)
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
   // trocar o console.log por uma requisição
-  const onSubmit = async data => {
+  /* const onSubmit = async data => {
     console.log(data)
+  } */
+  const onSubmit = data => {
+    const { email, password } = data
+    console.log('submit', { email, password })
+    console.log(authenticated)
+    login(email, password)
   }
 
   return (
@@ -50,45 +60,9 @@ export default function Form() {
           data-placeholder='Password'
         />
       </div>
-      <div className='alignment-aux-div'>
-        <div className='wrapper-input'>
-          <input
-            type='name'
-            name='name'
-            className={form.name ? 'has-value input' : 'input'}
-            {...register('name', { onChange: handleChange })}
-          />
-          <span
-            className={!errors.name ? 'focus-input' : 'focus-input-error'}
-            data-placeholder='Name'
-          />
-        </div>
-        <div className='wrapper-input'>
-          <input
-            type='surname'
-            name='surname'
-            className={form.surname ? 'has-value input' : 'input'}
-            {...register('surname', { onChange: handleChange })}
-          />
-          <span
-            className={!errors.surname ? 'focus-input' : 'focus-input-error'}
-            data-placeholder='Surname'
-          />
-        </div>
+      <div className='aux-start-div'>
+        <Link to='/'>Forgot password?</Link>
       </div>
-      <div className='wrapper-input'>
-        <input
-          type='phone'
-          name='phone'
-          className={form.phone ? 'has-value input' : 'input'}
-          {...register('phone', { onChange: handleChange })}
-        />
-        <span
-          className={!errors.phone ? 'focus-input' : 'focus-input-error'}
-          data-placeholder='Phone'
-        />
-      </div>
-      <div className='terms-of-service'></div>
       <div className='wrapper-login-btn'>
         <button className='login-btn' onClick={handleSubmit(onSubmit)}>
           Log In

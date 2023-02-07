@@ -6,7 +6,7 @@ import { theme, StyledReset } from './styles'
 import { AuthProvider } from '../contexts/AuthContext'
 import { MobileProvider } from '../contexts/MobileContext'
 
-import Home from '../components/Home'
+import Home from '../components/Desktop/Home'
 import SignInMobile from '../components/Mobile/SignInMobile'
 
 export default function App() {

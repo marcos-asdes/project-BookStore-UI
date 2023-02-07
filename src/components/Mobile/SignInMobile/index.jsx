@@ -4,7 +4,7 @@ import { Link, useNavigate } from 'react-router-dom'
 import { MobileContext } from '../../../contexts/MobileContext'
 
 import Form from './Form'
-import OAuth from '../../Modal/OAuth'
+import OAuth from '../../Desktop/Modal/OAuth'
 
 import return_icon from '../../../assets/return_icon.svg'
 

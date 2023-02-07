@@ -1,6 +1,6 @@
 import React from 'react'
 
-import plus_icon from '../../../assets/plus_icon.svg'
+import plus_icon from '../../../../assets/plus_icon.svg'
 
 import { PlaceAnAdContainer, PlaceAnAdTablet } from './style'
 
