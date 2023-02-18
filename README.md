@@ -29,12 +29,14 @@ www.mybookstore.tech
 
 ## Funcionalidades em construção
 
-- Disponível de forma recursiva, em displays desktop, tablet e mobile. _[Previsão de conclusão: **11/03/2023**]_
-- Registro, Login e Logout de usuário. _[Previsão de conclusão: **15/02/2023**]_
-- Ciclo completo de compra de produto(s). _[Previsão de conclusão: **21/02/2023**]_
-- Filtro de produtos por categoria. _[Previsão de conclusão: **28/02/2023**]_
-- Mecanismo de busca com ElasticSearch ou similar. _[Previsão de conclusão: **07/03/2023**]_
-- Página do produto. _[Previsão de conclusão: **11/03/2023**]_
+- Disponível de forma recursiva, em displays desktop, tablet e mobile.
+- Registro, Login e Logout de usuário.
+- Ciclo completo de compra de produto(s).
+- Filtro de produtos por categoria.
+- Mecanismo de busca com ElasticSearch ou similar.
+- Página do produto.
+
+**Previsão de conclusão do projeto: 25/03/2023**
 
 ## Autor
 
