@@ -1,6 +1,6 @@
 import React, { useState, useEffect, createContext } from 'react'
 
-import signin from '../services/AuthApi'
+import signin from '../services/authApi'
 import api from '../services/Api'
 //import { useNavigate } from 'react-router-dom'
 
