@@ -1,18 +1,17 @@
-import React, { useEffect } from 'react'
+import React, { useEffect, useContext } from 'react'
 
 import Wrapper from '../Wrapper'
 import ExitModal from '../ExitModal'
 import OAuth from '../OAuth'
 import Form from './Form'
 
+import { LoginModalContext } from '../../../../contexts/LoginModalContext'
+
 import { RegisterContainer, Title } from './style'
 
-export default function SignUp(props) {
-  const {
-    modalSignUpIsVisible,
-    setModalSignUpIsVisible,
-    setModalSignInIsVisible
-  } = props
+export default function SignUp() {
+  const { modalSignUpIsVisible, clickListener, switchModal } =
+    useContext(LoginModalContext)
 
   useEffect(() => {
     if (modalSignUpIsVisible) {
@@ -20,30 +19,10 @@ export default function SignUp(props) {
     }
   }, [])
 
-  function clickListener(e) {
-    const classNameString = e.target.className
-    if (typeof classNameString === 'string') {
-      const classNameArray = classNameString.split(' ')
-      if (classNameArray.includes('exit-modal')) {
-        setModalSignUpIsVisible(false)
-        window.removeEventListener('click', clickListener)
-      }
-    }
-  }
-
-  function switchModal() {
-    setModalSignInIsVisible(true)
-    setModalSignUpIsVisible(false)
-  }
-
   return (
     <Wrapper>
       <RegisterContainer>
-        <ExitModal
-          clickListener={clickListener}
-          setModalSignInIsVisible={setModalSignInIsVisible}
-          setModalSignUpIsVisible={setModalSignUpIsVisible}
-        />
+        <ExitModal />
         <Title>Create account</Title>
         <OAuth />
         <div className='aux-div-signup-modal-spacer'>

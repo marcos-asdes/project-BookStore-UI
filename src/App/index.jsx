@@ -4,6 +4,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 import { theme, StyledReset } from './styles'
 
 import { AuthProvider } from '../contexts/AuthContext'
+import { LoginModalProvider } from '../contexts/LoginModalContext'
 /* import { MobileProvider } from '../contexts/MobileContext' */
 
 import Home from '../components/Desktop/Home'
@@ -13,15 +14,17 @@ export default function App() {
   return (
     <ThemeProvider theme={theme}>
       <AuthProvider>
-        {/* <MobileProvider> */}
-        <BrowserRouter>
-          <StyledReset />
-          <Routes>
-            <Route path='/' element={<Home />} />
-            {/* <Route path='/sign-in' element={<SignInMobile />} /> */}
-          </Routes>
-        </BrowserRouter>
-        {/* </MobileProvider> */}
+        <LoginModalProvider>
+          {/* <MobileProvider> */}
+          <BrowserRouter>
+            <StyledReset />
+            <Routes>
+              <Route path='/' element={<Home />} />
+              {/* <Route path='/sign-in' element={<SignInMobile />} /> */}
+            </Routes>
+          </BrowserRouter>
+          {/* </MobileProvider> */}
+        </LoginModalProvider>
       </AuthProvider>
     </ThemeProvider>
   )
