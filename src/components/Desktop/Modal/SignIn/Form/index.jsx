@@ -2,6 +2,7 @@ import React, { useState, useContext } from 'react'
 import { Link } from 'react-router-dom'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { ThreeDots } from 'react-loader-spinner'
 
 import { AuthContext } from '../../../../../contexts/AuthContext'
 
@@ -17,20 +18,15 @@ export default function Form() {
     resolver: yupResolver(schema)
   })
   const [form, setForm] = useState({})
-  const { authenticated, login } = useContext(AuthContext)
+  const { login, loading } = useContext(AuthContext)
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  // trocar o console.log por uma requisição
-  /* const onSubmit = async data => {
-    console.log(data)
-  } */
   const onSubmit = data => {
     const { email, password } = data
     console.log('submit', { email, password })
-    console.log(authenticated)
     login(email, password)
   }
 
@@ -40,6 +36,7 @@ export default function Form() {
         <input
           type='email'
           name='email'
+          disabled={loading}
           className={form.email ? 'has-value input' : 'input'}
           {...register('email', { onChange: handleChange })}
         />
@@ -52,6 +49,7 @@ export default function Form() {
         <input
           type='password'
           name='password'
+          disabled={loading}
           className={form.password ? 'has-value input' : 'input'}
           {...register('password', { onChange: handleChange })}
         />
@@ -65,7 +63,11 @@ export default function Form() {
       </div>
       <div className='wrapper-login-btn'>
         <button className='login-btn' onClick={handleSubmit(onSubmit)}>
-          Log In
+          {!loading ? (
+            'Log In'
+          ) : (
+            <ThreeDots color='#FFFFFF' height={50} width={50} />
+          )}
         </button>
       </div>
     </FormContainer>

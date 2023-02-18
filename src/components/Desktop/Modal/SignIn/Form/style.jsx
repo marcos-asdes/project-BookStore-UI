@@ -28,6 +28,11 @@ const FormContainer = styled.form`
       font-family: ${props => props.theme.fonts.primary};
     }
 
+    input:disabled {
+      // theme
+      background: ${props => props.theme.colors.darkGrey};
+    }
+
     input:-webkit-autofill {
       box-shadow: 0 0 0 30px white inset;
       -webkit-box-shadow: 0 0 0 30px white inset;
