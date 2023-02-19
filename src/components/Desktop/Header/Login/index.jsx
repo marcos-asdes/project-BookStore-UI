@@ -39,8 +39,10 @@ export default function Login() {
             <span className='profile-name'>{user.name}</span>
           </span>
           <div className='profile-modal'>
-            <div className='profile-your-orders'>Your orders</div>
-            <div className='profile-logout' onClick={logout}>
+            <div className='profile-modal-aux'>Your account</div>
+            <div className='profile-modal-aux'>Your orders</div>
+            <div className='profile-modal-spacer' />
+            <div className='profile-modal-aux' onClick={logout}>
               Log out
             </div>
           </div>

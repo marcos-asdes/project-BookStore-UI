@@ -82,6 +82,7 @@ const ProfileButton = styled.div`
 
   .profile-aux {
     height: 14px;
+    width: fit-content;
     letter-spacing: 0.1px;
     font-weight: 400;
     line-height: 1em;
@@ -98,16 +99,25 @@ const ProfileButton = styled.div`
     white-space: nowrap;
     overflow: hidden;
     cursor: pointer;
-    //text-overflow: ellipsis;
+    // text-overflow: ellipsis;
   }
 
   .profile-modal {
     position: absolute;
     top: 100%;
     left: 0;
-    background-color: yellow;
+    width: 100%;
     display: none;
-    padding-top: 20px;
+    padding: 10px 7px 7px 5px;
+    letter-spacing: 0.1px;
+    font-weight: 400;
+    line-height: 1em;
+    font-size: 14px;
+    // theme
+    color: ${props => props.theme.colors.primary};
+    background-color: ${props => props.theme.colors.white};
+    font-family: ${props => props.theme.fonts.secondary};
+    border: 1px solid ${props => props.theme.colors.white};
   }
 
   .profile-button:hover {
@@ -117,16 +127,43 @@ const ProfileButton = styled.div`
 
   .profile-modal:hover {
     display: block;
+    // theme
+    border: 1px solid ${props => props.theme.colors.lightGrey};
   }
 
   .profile-button:hover + .profile-modal {
     display: block;
+    // theme
+    border: 1px solid ${props => props.theme.colors.lightGrey};
   }
 
-  .profile-your-orders {
+  .profile-modal-aux {
+    display: flex;
+    align-items: center;
+    height: 20px;
+    width: fit-content;
+    margin: 2px 0 2px 0;
+    cursor: pointer;
   }
 
-  .profile-logout {
+  .profile-modal-aux:hover {
+    text-decoration: underline;
+    transition: all 100ms;
+    -webkit-transition: all 100ms;
+    -o-transition: all 100ms;
+    -moz-transition: all 100ms;
+    // theme
+    color: ${props => props.theme.colors.black};
+  }
+
+  .profile-modal-spacer {
+    width: 100%;
+    height: 1px;
+    margin: 5px 0 5px 0;
+    display: flex;
+    align-items: center;
+    // theme
+    background-color: ${props => props.theme.colors.mediumGrey};
   }
 `
 
