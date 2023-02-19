@@ -2,7 +2,7 @@ import React from 'react'
 
 import Logo from './Logo'
 import SearchBar from './SearchBar'
-import PlaceAnAd from './PlaceAnAd'
+/* import PlaceAnAd from './PlaceAnAd' */
 import Login from './Login'
 
 import { HeaderContainer } from './style'
@@ -13,8 +13,8 @@ export default function Header() {
       <div className='aux-div'>
         <Logo />
         <SearchBar />
-        <div className='aux-buttons-div'>
-          <PlaceAnAd />
+        <div className='aux-profile-div'>
+          {/* <PlaceAnAd /> */}
           <Login />
         </div>
       </div>

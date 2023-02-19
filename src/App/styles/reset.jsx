@@ -40,6 +40,7 @@ const StyledReset = createGlobalStyle`
     height: 100vh;
     width: 100vw;
     overflow-x: hidden;
+    background-color: #f0f2f5;
   }
 
   a {

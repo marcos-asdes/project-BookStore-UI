@@ -17,6 +17,10 @@ const IconContainer = styled.div`
   border-radius: 7px;
   font-weight: 500;
   font-size: 14px;
+  transition: none;
+  -webkit-transition: none;
+  -o-transition: none;
+  -moz-transition: none;
   // theme
   color: ${props => props.theme.colors.terciary};
   font-family: ${props => props.theme.fonts.primary};
@@ -33,7 +37,7 @@ const IconContainer = styled.div`
   &:hover {
     cursor: pointer;
     // theme
-    background-color: ${props => props.theme.colors.lightGrey};
+    background-color: ${props => props.theme.colors.mediumGrey};
     color: ${props => props.theme.colors.primary};
   }
 

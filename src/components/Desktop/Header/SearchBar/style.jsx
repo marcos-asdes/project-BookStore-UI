@@ -12,7 +12,7 @@ const ImgSearchBar = styled.div`
 const SearchBarContainer = styled.div`
   display: flex;
   align-items: center;
-  border-radius: 15px;
+  border-radius: 5px;
   height: 45px;
   width: 45%;
   // theme

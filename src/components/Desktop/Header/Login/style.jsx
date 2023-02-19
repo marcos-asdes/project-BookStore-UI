@@ -58,6 +58,7 @@ const ProfileButton = styled.div`
   width: 120px;
   display: flex;
   align-items: center;
+  box-sizing: border-box;
 
   .profile-button {
     display: flex;
@@ -68,7 +69,12 @@ const ProfileButton = styled.div`
     border-radius: 2.5px;
     padding: 3px 7px 3px 7px;
     cursor: pointer;
+    transition: all 100ms;
+    -webkit-transition: all 100ms;
+    -o-transition: all 100ms;
+    -moz-transition: all 100ms;
     // theme
+    border: 1px solid ${props => props.theme.colors.white};
     color: ${props => props.theme.colors.primary};
     background-color: ${props => props.theme.colors.white};
     font-family: ${props => props.theme.fonts.primary};

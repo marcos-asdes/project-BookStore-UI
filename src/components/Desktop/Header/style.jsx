@@ -18,11 +18,10 @@ const HeaderContainer = styled.section`
     align-items: center;
     justify-content: space-around;
 
-    .aux-buttons-div {
+    .aux-profile-div {
       display: flex;
-      width: 20%;
       min-width: 100px;
-      height: 45px;
+      height: fit-content;
       align-items: center;
       justify-content: center;
       gap: 10px;
