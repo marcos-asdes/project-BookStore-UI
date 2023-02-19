@@ -52,4 +52,76 @@ const LoginButtonTablet = styled.div`
   }
 `
 
-export { LoginButton, LoginButtonTablet }
+const ProfileButton = styled.div`
+  position: relative;
+  height: 50px;
+  width: 120px;
+  display: flex;
+  align-items: center;
+
+  .profile-button {
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
+    border-radius: 2.5px;
+    padding: 3px 7px 3px 7px;
+    cursor: pointer;
+    // theme
+    color: ${props => props.theme.colors.primary};
+    background-color: ${props => props.theme.colors.white};
+    font-family: ${props => props.theme.fonts.primary};
+  }
+
+  .profile-aux {
+    height: 14px;
+    letter-spacing: 0.1px;
+    font-weight: 400;
+    line-height: 1em;
+    font-size: 14px;
+    cursor: pointer;
+  }
+
+  .profile-name {
+    height: 18px;
+    letter-spacing: 0.1px;
+    font-weight: 500;
+    line-height: 1em;
+    font-size: 16px;
+    white-space: nowrap;
+    overflow: hidden;
+    cursor: pointer;
+    //text-overflow: ellipsis;
+  }
+
+  .profile-modal {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    background-color: yellow;
+    display: none;
+    padding-top: 20px;
+  }
+
+  .profile-button:hover {
+    // theme
+    border: 1px solid ${props => props.theme.colors.primary};
+  }
+
+  .profile-modal:hover {
+    display: block;
+  }
+
+  .profile-button:hover + .profile-modal {
+    display: block;
+  }
+
+  .profile-your-orders {
+  }
+
+  .profile-logout {
+  }
+`
+
+export { LoginButton, LoginButtonTablet, ProfileButton }

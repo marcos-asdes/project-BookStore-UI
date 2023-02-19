@@ -1,15 +1,17 @@
-import React, { useState, useEffect, createContext } from 'react'
+import React, { useState, useEffect, createContext, useContext } from 'react'
 
 import signin from '../services/authApi'
 import api from '../services/Api'
-//import { useNavigate } from 'react-router-dom'
+
+import { LoginModalContext } from './LoginModalContext'
 
 const AuthContext = createContext()
 
 function AuthProvider({ children }) {
-  //const navigate = useNavigate()
   const [user, setUser] = useState(null)
   const [loading, setLoading] = useState(true)
+
+  const { exitModal } = useContext(LoginModalContext)
 
   useEffect(() => {
     const recoveredUser = localStorage.getItem('user')
@@ -34,8 +36,7 @@ function AuthProvider({ children }) {
     api.defaults.headers.Authorization = `Bearer ${token}`
 
     setUser(loggedUser)
-    // navigate('/')
-    // replace useNavigate with exitModal
+    exitModal()
   }
 
   function logout() {

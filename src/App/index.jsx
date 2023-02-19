@@ -13,8 +13,8 @@ import Home from '../components/Desktop/Home'
 export default function App() {
   return (
     <ThemeProvider theme={theme}>
-      <AuthProvider>
-        <LoginModalProvider>
+      <LoginModalProvider>
+        <AuthProvider>
           {/* <MobileProvider> */}
           <BrowserRouter>
             <StyledReset />
@@ -24,8 +24,8 @@ export default function App() {
             </Routes>
           </BrowserRouter>
           {/* </MobileProvider> */}
-        </LoginModalProvider>
-      </AuthProvider>
+        </AuthProvider>
+      </LoginModalProvider>
     </ThemeProvider>
   )
 }
