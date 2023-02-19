@@ -4,18 +4,23 @@ const LoginButton = styled.button`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 35%;
-  height: 45px;
+  width: 100px;
+  height: 50px;
   box-shadow: 0 0 0 0;
   outline: 0;
-  border-radius: 17.5px;
+  border-radius: 2.5px;
   letter-spacing: 0.1px;
   font-weight: 700;
   line-height: 1em;
+  font-size: 18px;
   cursor: pointer;
   flex-wrap: wrap;
+  transition: all 100ms;
+  -webkit-transition: all 100ms;
+  -o-transition: all 100ms;
+  -moz-transition: all 100ms;
   // theme
-  border: 1px solid ${props => props.theme.colors.primary};
+  border: 1px solid ${props => props.theme.colors.white};
   color: ${props => props.theme.colors.primary};
   background-color: ${props => props.theme.colors.white};
   font-family: ${props => props.theme.fonts.primary};
@@ -25,12 +30,19 @@ const LoginButton = styled.button`
     color: ${props => props.theme.colors.primary};
   }
 
+  &:hover {
+    // theme
+    border: 1px solid ${props => props.theme.colors.primary};
+  }
+
+  /*
   @media screen and (max-width: 2400px) {
     font-size: 16px;
   }
   @media screen and (max-width: 1200px) {
     font-size: 14px;
-  }
+  } 
+  */
   @media screen and (max-width: 950px) {
     display: none;
   }
