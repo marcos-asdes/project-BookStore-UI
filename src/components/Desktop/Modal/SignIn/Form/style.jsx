@@ -30,7 +30,7 @@ const FormContainer = styled.form`
 
     input:disabled {
       // theme
-      background: ${props => props.theme.colors.darkGrey};
+      background: ${props => props.theme.colors.lightGrey};
     }
 
     input:-webkit-autofill {

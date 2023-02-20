@@ -4,7 +4,7 @@ const LoginButton = styled.button`
   display: flex;
   justify-content: space-evenly;
   align-items: center;
-  width: 100px;
+  width: 120px;
   height: 50px;
   box-shadow: 0 0 0 0;
   outline: 0;

@@ -1,6 +1,9 @@
-import React, { useState } from 'react'
+import React, { useState, useContext } from 'react'
 import { useForm } from 'react-hook-form'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { ThreeDots } from 'react-loader-spinner'
+
+import { RegisterContext } from '../../../../../contexts/RegisterContext'
 
 import { schema } from '../../../../../schemas/SignUpSchema'
 import { FormContainer } from './style'
@@ -14,14 +17,16 @@ export default function Form() {
     resolver: yupResolver(schema)
   })
   const [form, setForm] = useState({})
+  const { registerUser, loading } = useContext(RegisterContext)
 
   function handleChange(e) {
     setForm({ ...form, [e.target.name]: e.target.value })
   }
 
-  // trocar o console.log por uma requisição
-  const onSubmit = async data => {
-    console.log(data)
+  const onSubmit = data => {
+    const { email, password, name, surname, phone } = data
+    console.log('submit', { email, password, name, surname, phone })
+    registerUser(email, password, name, surname, phone)
   }
 
   return (
@@ -30,6 +35,7 @@ export default function Form() {
         <input
           type='email'
           name='email'
+          disabled={loading}
           className={form.email ? 'has-value input' : 'input'}
           {...register('email', { onChange: handleChange })}
         />
@@ -42,6 +48,7 @@ export default function Form() {
         <input
           type='password'
           name='password'
+          disabled={loading}
           className={form.password ? 'has-value input' : 'input'}
           {...register('password', { onChange: handleChange })}
         />
@@ -55,6 +62,7 @@ export default function Form() {
           <input
             type='name'
             name='name'
+            disabled={loading}
             className={form.name ? 'has-value input' : 'input'}
             {...register('name', { onChange: handleChange })}
           />
@@ -67,6 +75,7 @@ export default function Form() {
           <input
             type='surname'
             name='surname'
+            disabled={loading}
             className={form.surname ? 'has-value input' : 'input'}
             {...register('surname', { onChange: handleChange })}
           />
@@ -80,6 +89,7 @@ export default function Form() {
         <input
           type='phone'
           name='phone'
+          disabled={loading}
           className={form.phone ? 'has-value input' : 'input'}
           {...register('phone', { onChange: handleChange })}
         />
@@ -91,7 +101,11 @@ export default function Form() {
       <div className='terms-of-service'></div>
       <div className='wrapper-login-btn'>
         <button className='login-btn' onClick={handleSubmit(onSubmit)}>
-          Log In
+          {!loading ? (
+            'Create Account'
+          ) : (
+            <ThreeDots color='#FFFFFF' height={50} width={50} />
+          )}
         </button>
       </div>
     </FormContainer>
