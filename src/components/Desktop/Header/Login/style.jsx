@@ -120,7 +120,7 @@ const ProfileButton = styled.div`
     left: 0;
     width: 100%;
     display: none;
-    padding: 10px 7px 7px 5px;
+    padding: 10px 7px 2px 7px;
     letter-spacing: 0.1px;
     font-weight: 400;
     line-height: 1em;
@@ -171,7 +171,7 @@ const ProfileButton = styled.div`
   .profile-modal-spacer {
     width: 100%;
     height: 1px;
-    margin: 5px 0 5px 0;
+    margin: 6px 0 6px 0;
     display: flex;
     align-items: center;
     // theme
