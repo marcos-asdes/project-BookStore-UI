@@ -16,7 +16,7 @@ const HeaderContainer = styled.section`
     width: 90%;
     height: 60px;
     align-items: center;
-    justify-content: space-around;
+    justify-content: space-evenly;
 
     .aux-profile-div {
       display: flex;
