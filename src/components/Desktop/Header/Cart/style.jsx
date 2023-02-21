@@ -11,6 +11,7 @@ const CartContainer = styled.div`
   -moz-transition: all 100ms;
   padding: 0px 7px 0px 7px;
   border-radius: 2.5px;
+  cursor: pointer;
   // theme
   border: 1px solid ${props => props.theme.colors.white};
 

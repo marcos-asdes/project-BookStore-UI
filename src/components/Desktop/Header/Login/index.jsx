@@ -7,6 +7,7 @@ import { LoginModalContext } from '../../../../contexts/LoginModalContext'
 import { AuthContext } from '../../../../contexts/AuthContext'
 
 import login_icon from '../../../../assets/profile_user.svg'
+import arrow_down from '../../../../assets/arrow_down.svg'
 
 import { LoginButton, LoginButtonTablet, ProfileButton } from './style.jsx'
 
@@ -35,8 +36,11 @@ export default function Login() {
       ) : (
         <ProfileButton>
           <span className='profile-button'>
-            <span className='profile-aux'>Hello,</span>
-            <span className='profile-name'>{user.name}</span>
+            <div className='profile-aux'>
+              <span className='profile-text'>Hello,</span>
+              <span className='profile-name'>{user.name}</span>
+            </div>
+            <img src={arrow_down} alt='arrow_down' />
           </span>
           <div className='profile-modal'>
             <div className='profile-modal-aux'>Your account</div>

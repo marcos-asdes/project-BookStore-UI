@@ -68,14 +68,13 @@ const ProfileButton = styled.div`
   position: relative;
   height: 50px;
   width: 120px;
-  display: flex;
-  align-items: center;
-  box-sizing: border-box;
+  /*   display: flex;
+  align-items: center; */
+  //box-sizing: border-box;
 
   .profile-button {
     display: flex;
-    justify-content: space-evenly;
-    flex-direction: column;
+    align-items: center;
     height: 100%;
     width: 100%;
     border-radius: 2.5px;
@@ -93,25 +92,33 @@ const ProfileButton = styled.div`
   }
 
   .profile-aux {
-    height: 14px;
-    width: fit-content;
-    letter-spacing: 0.1px;
-    font-weight: 400;
-    line-height: 1em;
-    font-size: 14px;
-    cursor: pointer;
-  }
+    display: flex;
+    justify-content: space-evenly;
+    flex-direction: column;
+    height: 100%;
+    width: 100%;
 
-  .profile-name {
-    height: 18px;
-    letter-spacing: 0.1px;
-    font-weight: 500;
-    line-height: 1em;
-    font-size: 16px;
-    white-space: nowrap;
-    overflow: hidden;
-    cursor: pointer;
-    // text-overflow: ellipsis;
+    .profile-text {
+      height: 14px;
+      width: fit-content;
+      letter-spacing: 0.1px;
+      font-weight: 400;
+      line-height: 1em;
+      font-size: 14px;
+      cursor: pointer;
+    }
+
+    .profile-name {
+      height: 18px;
+      letter-spacing: 0.1px;
+      font-weight: 500;
+      line-height: 1em;
+      font-size: 16px;
+      white-space: nowrap;
+      overflow: hidden;
+      cursor: pointer;
+      // text-overflow: ellipsis;
+    }
   }
 
   .profile-modal {
@@ -130,6 +137,11 @@ const ProfileButton = styled.div`
     background-color: ${props => props.theme.colors.white};
     font-family: ${props => props.theme.fonts.secondary};
     border: 1px solid ${props => props.theme.colors.white};
+  }
+
+  img {
+    height: 10px;
+    cursor: pointer;
   }
 
   .profile-button:hover {
