@@ -6,6 +6,7 @@ import OAuth from '../OAuth'
 import Form from './Form'
 
 import { LoginModalContext } from '../../../../contexts/LoginModalContext'
+import { AuthContext } from '../../../../contexts/AuthContext'
 
 import { LoginContainer, Title } from './style'
 
@@ -13,11 +14,20 @@ export default function SignIn() {
   const { modalSignInIsVisible, clickListener, switchModal } =
     useContext(LoginModalContext)
 
+  const { loading } = useContext(AuthContext)
+
   useEffect(() => {
     if (modalSignInIsVisible) {
       window.addEventListener('click', clickListener)
     }
   }, [])
+
+  const isEnabledSwitchModal = () => {
+    if (loading) {
+      return
+    }
+    switchModal()
+  }
 
   return (
     <Wrapper>
@@ -34,7 +44,7 @@ export default function SignIn() {
         <div className='redirect-create-account'>
           <div className='aux-inline-div'>
             <p>No account?</p>
-            <h1 onClick={switchModal}>Create one</h1>
+            <h1 onClick={isEnabledSwitchModal}>Create one</h1>
           </div>
         </div>
       </LoginContainer>

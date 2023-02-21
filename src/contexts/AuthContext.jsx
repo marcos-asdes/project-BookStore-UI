@@ -9,7 +9,7 @@ const AuthContext = createContext()
 
 function AuthProvider({ children }) {
   const [user, setUser] = useState(null)
-  const [loading, setLoading] = useState(true)
+  const [loading, setLoading] = useState(false)
 
   const { exitModal } = useContext(LoginModalContext)
 
@@ -19,24 +19,28 @@ function AuthProvider({ children }) {
     if (recoveredUser) {
       setUser(JSON.parse(recoveredUser))
     }
-
-    setLoading(false)
   }, [])
 
   const login = async (email, password) => {
-    const response = await signin(email, password)
-    console.log('login', response.data)
+    setLoading(true)
+    try {
+      const response = await signin(email, password)
+      console.log('login', response.data)
 
-    const loggedUser = response.data.user
-    const token = response.data.token
+      const loggedUser = response.data.user
+      const token = response.data.token
 
-    localStorage.setItem('user', JSON.stringify(loggedUser))
-    localStorage.setItem('token', token)
+      localStorage.setItem('user', JSON.stringify(loggedUser))
+      localStorage.setItem('token', token)
 
-    api.defaults.headers.Authorization = `Bearer ${token}`
+      api.defaults.headers.Authorization = `Bearer ${token}`
 
-    setUser(loggedUser)
-    exitModal()
+      setUser(loggedUser)
+      setLoading(false)
+      exitModal()
+    } catch (e) {
+      setLoading(false)
+    }
   }
 
   function logout() {

@@ -28,11 +28,6 @@ const FormContainer = styled.form`
       font-family: ${props => props.theme.fonts.primary};
     }
 
-    input:disabled {
-      // theme
-      background: ${props => props.theme.colors.lightGrey};
-    }
-
     input:-webkit-autofill {
       box-shadow: 0 0 0 30px white inset;
       -webkit-box-shadow: 0 0 0 30px white inset;
@@ -127,6 +122,12 @@ const FormContainer = styled.form`
     .has-value + .focus-input-error::before {
       width: 100%;
     }
+    /* 
+    input:disabled {
+      // theme
+      background: ${props => props.theme.colors.lightGrey};
+    } 
+    */
   }
 
   .aux-start-div {

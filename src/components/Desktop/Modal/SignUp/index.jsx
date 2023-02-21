@@ -6,6 +6,8 @@ import OAuth from '../OAuth'
 import Form from './Form'
 
 import { LoginModalContext } from '../../../../contexts/LoginModalContext'
+import { AuthContext } from '../../../../contexts/AuthContext'
+import { RegisterContext } from '../../../../contexts/RegisterContext'
 
 import { RegisterContainer, Title } from './style'
 
@@ -13,11 +15,21 @@ export default function SignUp() {
   const { modalSignUpIsVisible, clickListener, switchModal } =
     useContext(LoginModalContext)
 
+  const { loading } = useContext(AuthContext)
+  const { loadingRegister } = useContext(RegisterContext)
+
   useEffect(() => {
     if (modalSignUpIsVisible) {
       window.addEventListener('click', clickListener)
     }
   }, [])
+
+  const isEnabledSwitchModal = () => {
+    if (loading || loadingRegister) {
+      return
+    }
+    switchModal()
+  }
 
   return (
     <Wrapper>
@@ -34,7 +46,7 @@ export default function SignUp() {
         <div className='redirect-login'>
           <div className='aux-inline-div'>
             <p>Already have an account?</p>
-            <h1 onClick={switchModal}>Log In</h1>
+            <h1 onClick={isEnabledSwitchModal}>Log In</h1>
           </div>
         </div>
       </RegisterContainer>

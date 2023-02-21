@@ -62,7 +62,11 @@ export default function Form() {
         <Link to='/'>Forgot password?</Link>
       </div>
       <div className='wrapper-login-btn'>
-        <button className='login-btn' onClick={handleSubmit(onSubmit)}>
+        <button
+          className='login-btn'
+          disabled={loading}
+          onClick={handleSubmit(onSubmit)}
+        >
           {!loading ? (
             'Log In'
           ) : (
