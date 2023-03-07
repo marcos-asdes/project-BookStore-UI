@@ -22,7 +22,7 @@ export default function SignIn() {
     }
   }, [])
 
-  const isEnabledSwitchModal = () => {
+  const switchModalIsEnabled = () => {
     if (loading) {
       return
     }
@@ -44,7 +44,7 @@ export default function SignIn() {
         <div className='redirect-create-account'>
           <div className='aux-inline-div'>
             <p>No account?</p>
-            <h1 onClick={isEnabledSwitchModal}>Create one</h1>
+            <h1 onClick={switchModalIsEnabled}>Create one</h1>
           </div>
         </div>
       </LoginContainer>

@@ -1,35 +1,43 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
 import Book from './Book'
 
+import catalog from '../../../services/catalogApi'
+
 import { GridContainer } from './style'
 
-import { nSeed } from './seed'
-
 export default function Grid() {
-  function shuffleArray(arr) {
-    for (let i = arr.length - 1; i > 0; i--) {
-      const j = Math.floor(Math.random() * (i + 1))
-      ;[arr[i], arr[j]] = [arr[j], arr[i]]
-    }
-    return arr
-  }
+  const [catalogData, setCatalogData] = useState([])
+  const [loadingCatalog, setLoadingCatalog] = useState(true)
 
-  const newSeed = shuffleArray(nSeed)
+  useEffect(() => {
+    // eslint-disable-next-line no-extra-semi
+    ;(async () => {
+      const response = await catalog()
+      setCatalogData(response.data)
+      setLoadingCatalog(false)
+    })()
+  }, [])
+
+  console.log(catalogData)
 
   return (
     <GridContainer>
-      {newSeed.map(e => {
-        return (
-          <Book
-            key={e.id}
-            title={e.title}
-            author={e.author}
-            imageURL={e.imageURL}
-            price={e.price}
-          />
-        )
-      })}
+      {!loadingCatalog ? (
+        catalogData.map(e => {
+          return (
+            <Book
+              key={e.google_id}
+              title={e.title}
+              authors={e.authors}
+              imageURL={e.image_link}
+              price={e.amount}
+            />
+          )
+        })
+      ) : (
+        <></>
+      )}
     </GridContainer>
   )
 }

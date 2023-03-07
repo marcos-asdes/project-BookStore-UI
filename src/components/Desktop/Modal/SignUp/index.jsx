@@ -24,7 +24,7 @@ export default function SignUp() {
     }
   }, [])
 
-  const isEnabledSwitchModal = () => {
+  const switchModalIsEnabled = () => {
     if (loading || loadingRegister) {
       return
     }
@@ -46,7 +46,7 @@ export default function SignUp() {
         <div className='redirect-login'>
           <div className='aux-inline-div'>
             <p>Already have an account?</p>
-            <h1 onClick={isEnabledSwitchModal}>Log In</h1>
+            <h1 onClick={switchModalIsEnabled}>Log In</h1>
           </div>
         </div>
       </RegisterContainer>
